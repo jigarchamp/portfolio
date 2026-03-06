@@ -85,7 +85,7 @@
     .hero {
       max-width: 900px;
       margin: 0 auto;
-      padding: 72px 24px 56px;
+      padding: 72px 24px 15px;
     }
     .hero-eyebrow {
       display: inline-flex;
@@ -148,11 +148,11 @@
       padding: 0 24px 72px;
     }
     .section-label {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--muted);
+      letter-spacing: .06em;
+      color: var(--text);
       margin-bottom: 28px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
@@ -189,15 +189,19 @@
       border-radius: 8px;
       padding: 18px 20px;
     }
+    .why-item-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
     .why-item-icon {
       font-size: 20px;
-      margin-bottom: 8px;
+      flex-shrink: 0;
     }
     .why-item strong {
-      display: block;
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 4px;
     }
     .why-item span {
       font-size: 13px;
@@ -277,6 +281,21 @@
       border: 1px solid var(--border);
     }
     .btn svg { width: 14px; height: 14px; }
+
+    .project-problem {
+      padding: 22px 36px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    @media (max-width: 600px) {
+      .project-problem { padding: 18px 24px; }
+    }
+    .project-problem .project-section-title { margin-bottom: 10px; }
+    .project-problem p {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.65;
+    }
 
     .project-body {
       display: grid;
@@ -447,60 +466,93 @@
   </div>
   <h1>Building to <em>understand</em><br>how AI products are made.</h1>
   <p class="hero-desc">
-    I'm a Technical Product Manager who learned by doing. These two apps were built solo using AI coding tools — to experience firsthand what it takes to ship a product, and to understand the decisions engineers make every day.
+    I'm a Technical Product Manager who learns by doing. I built these two apps to feel firsthand what it takes to ship - the tradeoffs engineers face daily, and how AI is changing what's possible.
   </p>
-  <div class="hero-chips">
-    <span class="chip">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-      Built with Claude Code
-    </span>
-    <span class="chip">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      Next.js + TypeScript
-    </span>
-    <span class="chip">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582 4 8-4s8 1.79 8 4"/></svg>
-      Supabase + PostgreSQL
-    </span>
-    <span class="chip">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-      Anthropic Claude API
-    </span>
-  </div>
 </section>
-
 <!-- ── WHY ───────────────────────────────────────────── -->
 <section class="section">
-  <div class="section-label">Why I built these</div>
+  <div class="section-label">Why I built these apps</div>
   <div class="why-card">
     <p>
-      As a Product Manager at the intersection of AI and product development, I kept asking myself: <strong>what does it actually feel like to build with AI tools?</strong> Not just manage a team building them — but write the specs, make the tradeoffs, and ship something real.
+      I kept asking myself: <strong>what does it actually feel like to build with AI tools when development cost is basically zero?</strong> Not just manage a team doing it - but write the specs, make the tradeoffs, and ship something real.
     </p>
     <p>
-      So I built two full-stack web apps from scratch using Claude Code as my primary development tool. The goal wasn't to become a software engineer — it was to develop the intuition and vocabulary needed to be a more effective technical product leader.
+      So I built two apps using Claude Code. Not to become a software engineer, but to build the intuition and vocabulary to be a better PM.
     </p>
     <div class="why-grid">
       <div class="why-item">
-        <div class="why-item-icon">🔧</div>
-        <strong>Hands-on AI tool experience</strong>
-        <span>Understand what AI-assisted development feels like from the inside — where it accelerates, where it struggles, and what judgment it still requires.</span>
+        <div class="why-item-header">
+          <div class="why-item-icon">🔧</div>
+          <strong>Hands-on AI tool experience</strong>
+        </div>
+        <span>Feel what AI-assisted development is like from the inside - where it speeds things up, where it needs guidance, and where PM judgment makes the difference.</span>
       </div>
       <div class="why-item">
-        <div class="why-item-icon">🔄</div>
-        <strong>Builder vs. manager perspective</strong>
-        <span>Discover how the PM role changes when you've personally made the tradeoffs between scope, complexity, and shipping speed.</span>
+        <div class="why-item-header">
+          <div class="why-item-icon">🔄</div>
+          <strong>Builder vs. manager perspective</strong>
+        </div>
+        <span>How the PM role changes when you've personally had to choose between scope, complexity, and shipping speed.</span>
       </div>
       <div class="why-item">
-        <div class="why-item-icon">📦</div>
-        <strong>Full product lifecycle ownership</strong>
-        <span>Own every phase — idea, spec, backlog, build, deploy — to understand where decisions ripple in unexpected ways.</span>
+        <div class="why-item-header">
+          <div class="why-item-icon">📦</div>
+          <strong>Full product lifecycle ownership</strong>
+        </div>
+        <span>Own every phase - idea, spec, build, deploy - to see where early decisions ripple downstream.</span>
       </div>
       <div class="why-item">
-        <div class="why-item-icon">🎯</div>
-        <strong>Better engineering conversations</strong>
-        <span>Develop shared language with engineers: RLS policies, API rate limits, data models, auth flows, and deployment pipelines.</span>
+        <div class="why-item-header">
+          <div class="why-item-icon">🎯</div>
+          <strong>Better engineering conversations</strong>
+        </div>
+        <span>Talk to engineers as a peer: Database policies, API constraints, data models, auth flows - not just tickets.</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── KEY LEARNINGS ───────────────────────────────────── -->
+<section class="section">
+  <div class="section-label">Key takeaways — building AI products vs. managing teams building them</div>
+  <div class="learnings-grid">
+
+    <div class="learning-card">
+      <div class="learning-card-num">01 — Acceleration ≠ Automation</div>
+      <h3>AI tools make you faster, not autonomous</h3>
+      <p>Claude Code moved fast, but every meaningful decision still needed my judgment. Vague requirements produce vague code — writing a clear spec for AI is the same skill as writing one for an engineer.</p>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-card-num">02 — The Bottleneck Shifts</div>
+      <h3>PM judgment, not engineering velocity, is the constraint</h3>
+      <p>When AI handles implementation, the bottleneck shifts to product clarity: what to build, in what order, for whom. Good product thinking gets <em>more</em> valuable as AI tools mature — not less.</p>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-card-num">03 — Technical Fluency Changes Conversations</div>
+      <h3>Shared vocabulary with engineers changes what's possible</h3>
+      <p>Having built RLS policies, managed API costs, and wired up multi-step state myself — I now know which engineering tradeoffs are real and which are negotiable. That changes how I scope, estimate, and push back.</p>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-card-num">04 — Prompt Engineering = Requirement Writing</div>
+      <h3>AI product quality is determined at the spec layer</h3>
+      <p>Writing the health analysis prompt — output format, tone, edge cases, fallbacks — felt exactly like writing a PRD. PMs who thrive in AI will be the ones who can translate user needs directly into model instructions.</p>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-card-num">05 — Shipping Teaches What Planning Can't</div>
+      <h3>Real usage surfaces gaps no backlog anticipates</h3>
+      <p>Every sprint, fixing one thing exposed the next gap. Cutting scope, resisting over-engineering, shipping anyway — you don't really learn that until you own the deadline.</p>
+    </div>
+
+    <div class="learning-card">
+      <div class="learning-card-num">06 — AI Requires New UX Paradigms</div>
+      <h3>Latency, uncertainty, and hallucination are product problems</h3>
+      <p>Healthy Pathways had latency, partial outputs, and model uncertainty — all displayed to health-conscious users. None of that is an engineering problem. It's a product design problem, and spinners don't solve it.</p>
+    </div>
+
   </div>
 </section>
 
@@ -521,6 +573,7 @@
           <span class="stack-pill">Tailwind</span>
           <span class="stack-pill">Supabase</span>
           <span class="stack-pill">Claude Sonnet</span>
+          <span class="stack-pill">Claude Haiku</span>
           <span class="stack-pill">shadcn/ui</span>
         </div>
       </div>
@@ -535,27 +588,30 @@
         </a>
       </div>
     </div>
+    <div class="project-problem">
+      <div class="project-section-title">What problem are we trying to solve?</div>
+      <p>Most people leave the doctor's office unclear about which health areas to focus on or which tests to ask for. Healthy Pathways uses your demographics, lifestyle, and lab results to surface what matters most — not to replace your doctor, but to help you walk in with better questions.</p>
+    </div>
     <div class="project-body">
       <div class="project-section">
         <div class="project-section-title">Key Features</div>
         <ul class="features">
-          <li>5-step guided assessment wizard with auto-save and resume — users never lose progress</li>
-          <li>Demographics-driven concern recommendations: AI surfaces what to prioritize based on age, sex, and lifestyle</li>
-          <li>Concern-grouped biomarker entry with progressive disclosure — reduces overwhelm on the test results step</li>
-          <li>Traffic-light health review (Act Now / Monitor / Explore) with findings, suggested actions, and doctor questions</li>
-          <li>Guest mode — 3-step flow, rules-based analysis, fully browser-side, no data sent to server</li>
-          <li>Analysis quality meter that signals when enough data has been entered to generate a meaningful review</li>
-          <li>Assessment history dashboard and Print / Save PDF support</li>
+          <li>3-step assessment wizard with auto-save and resume — users never lose progress</li>
+          <li>AI-driven concern recommendations based on age, ethnicity, sex, and lifestyle</li>
+          <li>Progressive biomarker entry — grouped by concern, collapsed by default so users aren't overwhelmed</li>
+          <li>Traffic-light health review (Act Now / Monitor / Explore) with findings, actions, and doctor questions</li>
+          <li>Guest mode — rules-based analysis, no account needed, nothing stored server-side</li>
+          <li>Quality meter that tells users when they've entered enough for a meaningful analysis</li>
+          <li>Assessment history with PDF export — designed to be taken to a doctor's appointment</li>
         </ul>
       </div>
       <div class="project-section">
         <div class="project-section-title">Personal Learnings</div>
         <ul class="learnings">
-          <li><strong>Prompting is product design.</strong> The quality of the AI output is entirely determined by how you structure the input. Writing a good prompt is fundamentally PM work — defining requirements, handling edge cases, and specifying output format.</li>
-          <li><strong>LLM latency is a UX constraint.</strong> A 10-second API call requires different UX patterns than a 200ms query. I designed loading states, fallback analysis, and a guest mode specifically around this constraint.</li>
-          <li><strong>Wizard drop-off mirrors roadmap prioritization.</strong> Each step where users abandoned had a clear root cause — missing progress signals, ambiguous field labels, fear of losing data. The same diagnostic thinking applies to feature adoption.</li>
-          <li><strong>Security is a product requirement, not an afterthought.</strong> Supabase RLS policies, API key management, and guest-vs-authenticated data handling required deliberate decisions that affected every part of the architecture.</li>
-          <li><strong>The backlog never empties.</strong> At every sprint, fixing one experience revealed the next gap. Prioritization under constraint is the real work.</li>
+          <li><strong>Prompting is product design.</strong> The AI output is only as good as how you structure the input — edge cases, output format, tone. It's requirement writing.</li>
+          <li><strong>LLM latency is a real UX constraint.</strong> A 10-second API call changes how you design the whole experience. I use Haiku for speed and Sonnet for depth, depending on what the user needs.</li>
+          <li><strong>Invent & simplify.</strong> It's easy to keep adding. The harder call is cutting features that complicate more than they help.</li>
+          <li><strong>The backlog never empties.</strong> Every fix revealed the next gap. Prioritizing under constraint is the same work whether AI or engineers are writing the code.</li>
         </ul>
       </div>
     </div>
@@ -588,15 +644,19 @@
         </a>
       </div>
     </div>
+    <div class="project-problem">
+      <div class="project-section-title">What problem are we trying to solve?</div>
+      <p>Scouts struggle to find which Merit Badge classes their troop is offering. Counselors have no visibility into what badges scouts actually want. MB Connect bridges that gap — scouts can discover and enroll in classes, counselors can see demand and manage their offerings.</p>
+    </div>
     <div class="project-body">
       <div class="project-section">
         <div class="project-section-title">Key Features</div>
         <ul class="features">
           <li>Public merit badge catalog with search, category filters, and difficulty indicators — visible without an account</li>
-          <li>Role-based access control across four personas: Scout, Counselor, Leader, and Admin — each with distinct permissions and views</li>
+          <li>Role-based access for four user types — Scout, Counselor, Leader, Admin — each with their own permissions and views</li>
           <li>Counselor qualification profiles — self-declared teaching credentials scoped to specific merit badges</li>
           <li>Class creation and enrollment flow — counselors publish sessions, scouts discover and register</li>
-          <li>MB detail pages showing available counselors for each badge, linking discovery to action</li>
+          <li>Merit badge detail pages listing available counselors — closing the loop from discovery to enrollment</li>
           <li>Troop roster management for admins with role and join-date visibility</li>
           <li>Full guest → account onboarding flow with invite-based troop joining</li>
         </ul>
@@ -604,58 +664,13 @@
       <div class="project-section">
         <div class="project-section-title">Personal Learnings</div>
         <ul class="learnings">
-          <li><strong>Data modeling decisions define product constraints.</strong> Choosing between a JSONB column and a relational table for counselor qualifications locked in capabilities for future features. These are the decisions I now know to flag early.</li>
-          <li><strong>Multi-persona products require genuine empathy for each user type.</strong> Designing for Scouts, Counselors, Leaders, and Admins simultaneously forced me to hold four different mental models — each with different goals, trust levels, and failure modes.</li>
-          <li><strong>Row-level security is product policy expressed in SQL.</strong> Every access rule (can a leader see a counselor's qualifications?) is both a product decision and a database constraint. Getting these wrong is a security vulnerability, not just a UI bug.</li>
-          <li><strong>Shipping alpha revealed gaps that specs could never predict.</strong> The onboarding "cold drop" (users completing setup with no next action) only became obvious after building the complete flow end-to-end.</li>
-          <li><strong>Working with real-world data adds hidden complexity.</strong> Seeding 135 BSA merit badges with accurate categories, descriptions, and difficulty levels exposed data quality issues that a simple demo dataset never would.</li>
+          <li><strong>Building for four user types at once is hard.</strong> Each persona has different goals, trust levels, and failure modes. Getting that right in the spec is the product work.</li>
+          <li><strong>Row-level security is product policy in SQL.</strong> Every access decision — who can see what — is both a PM call and a database constraint. Get it wrong and it's a security bug, not just a UX issue.</li>
+          <li><strong>Shipping revealed gaps specs couldn't predict.</strong> The onboarding "cold drop" — finishing setup with no clear next step — was invisible until the full flow existed.</li>
+          <li><strong>Real data is messier than demo data.</strong> Seeding 135 actual BSA merit badges surfaced data quality issues I never would have found with a test dataset.</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── KEY LEARNINGS ───────────────────────────────────── -->
-<section class="section">
-  <div class="section-label">Cross-project takeaways — building AI products vs. managing teams building them</div>
-  <div class="learnings-grid">
-
-    <div class="learning-card">
-      <div class="learning-card-num">01 — Acceleration ≠ Automation</div>
-      <h3>AI tools make you faster, not autonomous</h3>
-      <p>Claude Code dramatically accelerated development — but every significant decision still required judgment I had to bring. Ambiguous requirements produce ambiguous code. Writing precise specs for an AI assistant is the same skill as writing them for an engineering team.</p>
-    </div>
-
-    <div class="learning-card">
-      <div class="learning-card-num">02 — The Bottleneck Shifts</div>
-      <h3>PM judgment, not engineering velocity, is the constraint</h3>
-      <p>When AI handles implementation, the bottleneck becomes product clarity: what should be built, in what order, for whom? This experience reinforced that strong product thinking becomes <em>more</em> valuable as AI coding tools mature — not less.</p>
-    </div>
-
-    <div class="learning-card">
-      <div class="learning-card-num">03 — Technical Fluency Changes Conversations</div>
-      <h3>Shared vocabulary with engineers changes what's possible</h3>
-      <p>Having personally implemented Supabase RLS policies, API streaming, and multi-step wizard state management means I now know which tradeoffs are real and which are resolvable. That fluency changes how I scope work, interpret estimates, and push back on constraints.</p>
-    </div>
-
-    <div class="learning-card">
-      <div class="learning-card-num">04 — Prompt Engineering = Requirement Writing</div>
-      <h3>AI product quality is determined at the spec layer</h3>
-      <p>Designing the AI health analysis prompt for Healthy Pathways — defining output schema, tone, edge cases, and fallback behavior — was indistinguishable from writing product requirements. The best AI PMs will be those who can translate user needs into precise model instructions.</p>
-    </div>
-
-    <div class="learning-card">
-      <div class="learning-card-num">05 — Shipping Teaches What Planning Can't</div>
-      <h3>Real usage surfaces gaps no backlog anticipates</h3>
-      <p>Both apps went through multiple sprint cycles where each shipped improvement revealed the next critical gap. The discipline of ruthless prioritization, cutting scope to hit a milestone, and not gold-plating — that can only be learned by actually having a deadline.</p>
-    </div>
-
-    <div class="learning-card">
-      <div class="learning-card-num">06 — AI Requires New UX Paradigms</div>
-      <h3>Latency, uncertainty, and hallucination are product problems</h3>
-      <p>Building Healthy Pathways exposed UX challenges unique to AI: a 10-second wait for analysis, partial results, model uncertainty displayed to medical users. These aren't engineering problems — they're product design problems that require PM-led solutions, not just spinners.</p>
-    </div>
-
   </div>
 </section>
 
@@ -664,7 +679,6 @@
   <p>
     Built by <a href="https://www.linkedin.com/in/jigarchamp/" target="_blank" rel="noopener">Jigar Champaneria</a>
     &nbsp;·&nbsp;
-    Developed with <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>
     &nbsp;·&nbsp;
     <a href="https://github.com/jigarchamp" target="_blank" rel="noopener">GitHub</a>
   </p>
