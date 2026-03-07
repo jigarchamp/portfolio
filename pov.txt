@@ -1,0 +1,207 @@
+================================================================================
+PRODUCT POV — Q&A DRAFT
+"Product Management in the Age of AI-Enabled Delivery"
+================================================================================
+
+Instructions: Answer each question as if speaking to another senior PM over
+coffee. Be specific. Use examples from your own experience where you can.
+One concrete example beats three abstract observations.
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 1 — THE PM MINDSET SHIFT
+────────────────────────────────────────────────────────────────────────────────
+
+Q1. Most PMs were trained to treat engineering capacity as a scarce resource —
+    the whole job was prioritizing what not to build. If that constraint is
+    loosening, what actually becomes the job?
+
+YOUR ANSWER:
+Headcount was always a crutch. PMs complained about not having enough engineers, but if we're honest, the constraint was never capacity — it was clarity about what customers actually needed.
+
+That question doesn't change when AI enters the room. Customers still have jobs to be done. We still have ways to measure whether they're succeeding. More features, shipped faster, don't help if they're the wrong features.
+
+This is why I keep coming back to "Invent & Simplify." The cheaper it gets to build, the more important it is to cut. The PM's job in an AI-enabled world isn't to maximize output — it's to make sure we're building the right things, and that customers can actually use what we ship.
+
+
+
+Q2. There's a version of this that sounds scary for PMs: "anyone can build now,
+    so PMs are less necessary." There's another version where PMs become more
+    valuable. Which do you believe, and why?
+
+YOUR ANSWER:
+Of course I'm biased — but here's the honest case:
+
+When I was building Healthy Pathways, I kept adding features. It was just so easy. Claude would build whatever I asked for in minutes. Alpha users brought me back to reality: the app was overwhelming, and most of them couldn't get through data entry to see their analysis.
+
+I had a real moment of doubt — is this product even useful? But the answer wasn't to gut the feature set. It was to do what a PM is actually supposed to do: figure out what customers need versus what I built. I simplified the UX significantly, and reworked the AI layer to call different models depending on how much information a user was willing to provide. More data → deeper Sonnet analysis. Less data → faster Haiku result. The customer experience got dramatically better without removing core value.
+
+That judgment call — what to simplify, what to keep, where the real friction is — doesn't come from shipping faster. It comes from staying honest about what customers are actually experiencing. More people shipping more code doesn't produce that. Good PMs do.
+
+Q3. You've now built two apps yourself using AI tools. What's one assumption
+    you held as a PM — something you confidently told engineers — that turned
+    out to be wrong once you were the one doing the building?
+
+YOUR ANSWER:
+I assumed a PM could design a product by thinking through the happy path and a handful of edge cases. Wrong.
+
+When building MB Connect, I ran into a situation where unauthenticated users couldn't discover available merit badge classes. It looked like a UX bug. It was actually a database permissions issue — the Supabase Row Level Security policies hadn't been written to account for the guest state.
+
+I had known that guest access would matter. I just never wrote it down clearly enough to catch the gap before it hit me in implementation.
+
+That's the thing: as a PM, I never personally felt the cost of my own vagueness. I'd write an ambiguous spec, hand it off, and engineers would quietly absorb the rework cost while I was already two features ahead. Building this app, I was the one who had to stop, dig into the database, fix the policies, and retest. I felt it. That changed how I write specs.
+
+The last paragraph is the post. "PMs don't feel the cost of their own vagueness" is the provocation — every engineer reading it will nod, and every PM will feel slightly called out. That's exactly where you want to be.
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 2 — WORKING WITH ENGINEERING TEAMS
+────────────────────────────────────────────────────────────────────────────────
+
+Q4. The classic PM/eng dynamic: PM writes spec, engineer estimates, both
+    negotiate scope. How does that dynamic change when AI can produce a working
+    prototype in hours? Who holds the power in that room now?
+
+YOUR ANSWER:
+
+
+Q5. A common PM failure mode was writing vague specs and letting engineers fill
+    in the gaps. That gap-filling now happens at the prompt layer. Does that
+    make the PM's job easier or does it just move where the ambiguity bites you?
+
+YOUR ANSWER:
+
+
+Q6. Engineers are also using AI tools now — they're shipping faster too. Does
+    that compress timelines in a good way, or does it create new coordination
+    problems (moving faster without alignment)?
+
+YOUR ANSWER:
+
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 3 — WORKING WITH LEADERS
+────────────────────────────────────────────────────────────────────────────────
+
+Q7. Leaders set strategy and allocate resources partly based on what's
+    feasible. If feasibility windows shrink from quarters to weeks, how should
+    PMs be changing the conversations they're having with their leadership?
+
+YOUR ANSWER:
+
+
+Q8. Roadmaps are a communication tool as much as a planning tool. If your
+    execution speed just went up 5x, does the quarterly roadmap still make
+    sense? What replaces it?
+
+YOUR ANSWER:
+
+
+Q9. Leaders often push PMs to "move faster." Now that faster is actually
+    possible, what's the new pushback PMs need to be willing to have with
+    leadership?
+
+YOUR ANSWER:
+
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 4 — THE PM'S TOOLKIT
+────────────────────────────────────────────────────────────────────────────────
+
+Q10. Walk me through a week in your life as a PM before AI tools were a real
+     factor. Now walk me through what that same week looks like today, or what
+     you think it should look like. What's different?
+
+YOUR ANSWER:
+
+
+Q11. Which traditional PM tool (PRD, user story map, roadmap, sprint planning,
+     stakeholder review) has changed the most in an AI-first workflow, and how?
+
+YOUR ANSWER:
+
+
+Q12. Are there any PM skills or activities that AI tools have made genuinely
+     worse — things you relied on that now produce lower quality output or
+     create false confidence?
+
+YOUR ANSWER:
+
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 5 — EXPERIMENTATION WHEN DEV COST IS NEAR ZERO
+────────────────────────────────────────────────────────────────────────────────
+
+Q13. Traditional A/B testing doctrine says: form a hypothesis, build the
+     minimum test, measure, decide. If building is cheap, does the "minimum"
+     part of that still matter? What changes about how you experiment?
+
+YOUR ANSWER:
+
+
+Q14. "Fail fast" has been PM doctrine for a decade. What's the difference
+     between failing fast because you validated a hypothesis and failing fast
+     because you just threw something at the wall? Does cheap development blur
+     that line?
+
+YOUR ANSWER:
+
+
+Q15. If you can run 10x more experiments, you also generate 10x more signal —
+     and noise. How do PMs avoid getting lost in a sea of inconclusive results?
+
+YOUR ANSWER:
+
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 6 — INVENT & SIMPLIFY IN A WORLD WHERE BUILDING IS EASY
+────────────────────────────────────────────────────────────────────────────────
+
+Q16. Amazon's "Invent & Simplify" principle says the bias should be toward
+     finding simpler ways to solve hard problems, not just adding features.
+     You've lived on both sides — managing teams and building yourself. Which
+     environment makes it harder to simplify, and why?
+
+YOUR ANSWER:
+
+
+Q17. When building is cheap, the temptation to add one more feature is
+     constant. What's the discipline that prevents that? Is it a process, a
+     principle, or just personal taste?
+
+YOUR ANSWER:
+
+
+Q18. Give me an example — from either Healthy Pathways or MB Connect — where
+     you caught yourself over-building and had to cut something you'd already
+     shipped or half-built. What made you cut it?
+
+YOUR ANSWER:
+
+
+────────────────────────────────────────────────────────────────────────────────
+SECTION 7 — THE BIGGER PICTURE
+────────────────────────────────────────────────────────────────────────────────
+
+Q19. There's a version of AI-enabled delivery that democratizes product
+     building — more people can make things. There's another version where it
+     just lets the same companies ship more features faster. Which do you think
+     actually happens, and what's the PM's role in which version wins?
+
+YOUR ANSWER:
+
+
+Q20. What's the one thing you wish someone had told you before you started
+     building with AI tools — not about the tools themselves, but about what
+     it would change about how you think as a PM?
+
+YOUR ANSWER:
+
+
+================================================================================
+NOTES / THEMES TO DEVELOP
+================================================================================
+
+(Use this space to jot raw ideas, connections between answers, or angles
+you want to develop further for LinkedIn / Substack posts.)
+
+
+================================================================================
