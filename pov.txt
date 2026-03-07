@@ -61,6 +61,13 @@ Q4. The classic PM/eng dynamic: PM writes spec, engineer estimates, both
     prototype in hours? Who holds the power in that room now?
 
 YOUR ANSWER:
+A working prototype is not a finished product — and the speed at which you can produce one is genuinely dangerous.
+
+I ran this experiment on myself. With Healthy Pathways, I gave Claude a few paragraphs and let it run. Features appeared almost instantly. It was addictive. And I paid for it later with rework, because I'd let the tool make decisions that a PM should have made.
+
+With MB Connect, I changed my approach entirely. I spent time upfront mapping each stakeholder — scout, counselor, leader, admin — and what problem they were trying to solve. I asked Claude to ask me questions before building anything. The output was cleaner from day one, not because the AI was smarter, but because I came in with better inputs.
+
+That's the answer to who holds the power: whoever understands the customer problem most clearly. AI can prototype anything in hours. It can't tell you what to prototype, or whether it's the right thing to build. That's still the PM's job — and it always was.
 
 
 Q5. A common PM failure mode was writing vague specs and letting engineers fill
@@ -68,6 +75,11 @@ Q5. A common PM failure mode was writing vague specs and letting engineers fill
     make the PM's job easier or does it just move where the ambiguity bites you?
 
 YOUR ANSWER:
+The ambiguity doesn't disappear, it just bites you later, and harder.
+
+Good engineers are an underrated quality-control mechanism. The questions they ask in working sessions, frustrating as they are in the moment, force you to find the gaps in your own thinking before any code gets written. AI skips that step. It executes exactly what you described. If you described the wrong thing, you won't find out until you're looking at a working prototype of the wrong product.
+
+PMs who relied on engineer pushback — often without realizing it — now have to build that check into their own process. That means asking harder questions of yourself upfront: What am I assuming? What states haven't I thought through? What happens when this goes wrong? AI won't ask those for you. It's on you to ask them before you prompt.
 
 
 Q6. Engineers are also using AI tools now — they're shipping faster too. Does
@@ -75,6 +87,11 @@ Q6. Engineers are also using AI tools now — they're shipping faster too. Does
     problems (moving faster without alignment)?
 
 YOUR ANSWER:
+Both — and which one you get depends entirely on how aligned the team was before AI touched the keyboard.
+
+Here's what often goes unnoticed: slow delivery was a natural forcing function for alignment. When rework cost weeks, teams were motivated to get on the same page before building. AI removes that friction. A misaligned team can now build the wrong thing three times faster — and only discover the misalignment when they're looking at a finished product that doesn't solve the right problem.
+
+The coordination challenges aren't new. But the cost of skipping alignment conversations used to be visible in missed sprint dates. Now it shows up as polished, fast-shipped products that customers don't want. That's a harder problem to diagnose — and a more expensive one to fix.
 
 
 ────────────────────────────────────────────────────────────────────────────────
