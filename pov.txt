@@ -103,6 +103,11 @@ Q7. Leaders set strategy and allocate resources partly based on what's
     PMs be changing the conversations they're having with their leadership?
 
 YOUR ANSWER:
+The conversation needs to shift from "what can we build?" to "what should we build, and how will we know it worked?"
+
+Feasibility used to be a legitimate leadership discussion — it was genuinely uncertain whether something could be built in a given timeframe. That constraint is loosening. What's not loosening is the difficulty of knowing whether the right thing got built. PMs should be redirecting leadership energy toward that question: What does customer success look like? What metrics tell us we got it right? What do we do if the first version doesn't move them?
+
+The risk of not having this conversation: leaders start treating AI-enabled speed as a license to ship more roadmap items. More features, faster. That's exactly the wrong lesson. PMs need to be the ones making the case that speed without direction is just a faster way to build the wrong product.
 
 
 Q8. Roadmaps are a communication tool as much as a planning tool. If your
@@ -110,6 +115,13 @@ Q8. Roadmaps are a communication tool as much as a planning tool. If your
     sense? What replaces it?
 
 YOUR ANSWER:
+The quarterly cadence isn't the problem — the content is.
+
+Most roadmaps are feature lists with dates. That format made sense when shipping a feature was a meaningful unit of work. When AI compresses build time, "we shipped the feature" tells you almost nothing. What you need to show is: what customer problem were we solving, what was our hypothesis, and did the metrics move?
+
+Here's the constraint that keeps quarterly relevant: you can ship in a week, but you usually can't measure in a week. Metric movements — adoption, retention, task completion — need time to accumulate. A roadmap organized around outcomes and measurement windows makes more sense than one organized around feature releases. Same cadence, different content.
+
+The artifact I'd push for: replace "Feature | Quarter | Team" with "Customer Problem | Hypothesis | Success Metric | Target Date." That's a roadmap leadership can actually hold a team accountable to.
 
 
 Q9. Leaders often push PMs to "move faster." Now that faster is actually
@@ -117,7 +129,11 @@ Q9. Leaders often push PMs to "move faster." Now that faster is actually
     leadership?
 
 YOUR ANSWER:
+The pushback isn't "we can't move faster." It's "let's make sure we agree on what faster is for."
 
+The mistake leaders will make is hearing "AI accelerates delivery" and concluding "now we can do more." More features, more initiatives, more roadmap items. PMs need to be willing to say: that's not the opportunity. The opportunity is to get the right answer faster, not to get more wrong answers in the same amount of time.
+
+In practice that means one conversation: when a leader says "can we move faster on X?", the PM's response should be "yes — and before we do, what would success look like for X, and how will we know we got there?" That question either surfaces the alignment you need, or exposes that the leader hasn't thought it through yet. Either way, you're better off knowing before the team ships.
 
 ────────────────────────────────────────────────────────────────────────────────
 SECTION 4 — THE PM'S TOOLKIT
