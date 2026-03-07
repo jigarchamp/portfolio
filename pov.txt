@@ -144,19 +144,39 @@ Q10. Walk me through a week in your life as a PM before AI tools were a real
      you think it should look like. What's different?
 
 YOUR ANSWER:
+Before: roughly a third writing narrative PRDs and requirements docs, a third in weekly status and release readiness reviews, a third in working sessions with engineers debugging spec gaps.
 
+The biggest shift: status reviews are shrinking. When AI accelerates delivery, there's less to report on — things either shipped or they didn't. That time is moving toward sharper upfront requirements work: longer Q&A sessions to stress-test assumptions before anything gets built.
+
+But here's the honest part: that recovered time isn't going where it should. It's not going to customer outcomes — to sitting with users, reviewing metrics, asking whether what we shipped actually moved anything. It's getting absorbed by the next feature, the next spec, the next planning cycle. The AI-enabled PM week should look like: a third on customer and outcomes research, a third on precise requirements, a third on reviewing what shipped and what it did. I'm not there yet. Most PMs aren't.
+
+Comment from Claude: The last paragraph is a LinkedIn post by itself. "Most PMs aren't there yet" invites every reader to either agree (and share) or push back (and engage).
 
 Q11. Which traditional PM tool (PRD, user story map, roadmap, sprint planning,
      stakeholder review) has changed the most in an AI-first workflow, and how?
 
 YOUR ANSWER:
+Most PMs thought of the PRD as a communication tool. It was actually a thinking tool. Writing in clear narrative forced you to complete your own thoughts: commit to language, finish the sentence, resolve the ambiguity before moving on. Prompting skips that. You can stay vague, iterate, and course-correct later — and it still feels productive because something is getting built.
 
+The trap: PMs are starting to skip the PRD because the iterative prompting process feels like a substitute. It isn't. What you lose is the forcing function — the moment where you had to decide, in writing, what success looks like before any code existed.
+
+The version I'd push for: write the PRD first, then use AI to argue against it. Ask it to find the gaps, the edge cases, the unstated assumptions. That combination — structured human thinking stress-tested by AI — is better than either one alone.
+
+I saw this play out directly. With Healthy Pathways, I prompted with features I wanted to build. They appeared fast — and I had to undo much of it later because they weren't hitting real user needs. With MB Connect, I started with problems: what scouts, counselors, and leaders were struggling with. The iteration stayed focused on stakeholder needs before a single feature was named. By the time anything got built, I had a detailed narrative of what we were solving and for whom. Not a formal PRD — but the same thinking, produced through problem-first prompting.
 
 Q12. Are there any PM skills or activities that AI tools have made genuinely
      worse — things you relied on that now produce lower quality output or
      create false confidence?
 
 YOUR ANSWER:
+The Amazon PRFAQ — the working-backwards artifact that forces you to imagine the product on launch day and anticipate every stakeholder question before a line of code is written. The FAQ section in particular is brutal in the best way: it forces you to articulate why a customer would actually want this, not just what it does.
+
+AI breaks that forcing function in a subtle way. It asks clarifying questions — but about implementation, not value. "What should happen when the user clicks X?" not "Why would a user want to click X at all?" The distinction matters. You can have a very detailed, very well-implemented product that solves a problem nobody has. AI will help you build it without ever asking whether you should.
+
+The false confidence is the real problem. After a long prompting session, it genuinely feels like you've done the hard thinking. You haven't — you've done the scoping. The hard thinking is whether this is worth building at all.
+
+Fix: explicitly prompt AI to challenge the value proposition before touching implementation. "What assumptions am I making? Why would a customer want this? What's the simpler version?" Without that instruction, you'll keep building features. With it, you might build value.
+
 
 
 ────────────────────────────────────────────────────────────────────────────────
