@@ -188,7 +188,11 @@ Q13. Traditional A/B testing doctrine says: form a hypothesis, build the
      part of that still matter? What changes about how you experiment?
 
 YOUR ANSWER:
+The rigor doesn't change. If you can't define what success looks like for a button change, you definitely can't define it for an entire flow.
 
+What does change is the scope of what's testable. In a world where building is expensive, you test small increments — a headline, a button, a modal. When building is cheap, you can run experiments at a higher level of abstraction: does this entire onboarding flow convert better than that one? Does a guided assessment outperform a blank form? You're not just testing UI variants anymore, you're testing approaches.
+
+That's genuinely valuable, but it raises the stakes on hypothesis quality. Bigger experiments are harder to interpret when they fail. "The flow didn't work" is less actionable than "the second step caused drop-off." "Minimum viable experiment" doesn't go away, it just stops being about how much you build and starts being about how much you can actually learn from the result.
 
 Q14. "Fail fast" has been PM doctrine for a decade. What's the difference
      between failing fast because you validated a hypothesis and failing fast
@@ -196,13 +200,25 @@ Q14. "Fail fast" has been PM doctrine for a decade. What's the difference
      that line?
 
 YOUR ANSWER:
+"Fail fast" was always a misunderstood term. The goal was never to fail, it was to learn quickly. "Understand fast" is more accurate.
 
+Cheap development blurs that line in a specific way: when building is easy, you can ship without thinking, call it an experiment, and convince yourself you're moving fast. But if you never formed a hypothesis, you can't interpret the result. You spent less time to learn nothing. That's not failing fast — that's just shipping.
+
+The discipline doesn't change: know what you're testing, know what signal you're looking for, and know in advance what result would cause you to change direction. Failing because you didn't get signal means your experiment was underpowered or your hypothesis was untestable. Failing because the signal clearly said "no" means you learned something. Only one of those moves you forward.
+
+Cheap dev increases the temptation to skip that upfront work. The PM's job is to resist that — and to make sure "we shipped it to see what happens" never passes for an experiment.
 
 Q15. If you can run 10x more experiments, you also generate 10x more signal —
      and noise. How do PMs avoid getting lost in a sea of inconclusive results?
 
 YOUR ANSWER:
+More experiments doesn't automatically mean more learning. It can mean less, if you're not selective about what you test.
 
+The answer to avoiding inconclusive results isn't running experiments more rigorously, it's choosing experiments more carefully. Before running anything, ask: if this experiment returns a clear result, would it change what we build next? If the answer is "not really," the experiment isn't worth running. PMs should be ranking experiments by expected information value, not by how cheap they are to build.
+
+Running concurrent experiments presents another problem which grows as it becomes easier to push experiments to customers. When multiple experiments run at the same time across the same users, you lose the ability to attribute outcomes cleanly. A user who saw both Experiment A and Experiment B doesn't tell you which one drove the result. Higher experiment velocity makes this worse. The fix is to sequence experiments where possible, or ensure they're designed to be truly independent: different user segments, different surfaces, different metrics.
+
+The process doesn't change with volume. The stakes of running it poorly just go up.
 
 ────────────────────────────────────────────────────────────────────────────────
 SECTION 6 — INVENT & SIMPLIFY IN A WORLD WHERE BUILDING IS EASY
@@ -214,11 +230,25 @@ Q16. Amazon's "Invent & Simplify" principle says the bias should be toward
      environment makes it harder to simplify, and why?
 
 YOUR ANSWER:
+The AI-enabled workflow — and it's not close.
+
+When managing teams, simplification was partly enforced by constraint. Engineers pushed back on scope. Estimates forced trade-offs. Leaders questioned ROI. You couldn't just add a feature because you thought of it — someone would ask why, and that friction was productive.
+
+Building with AI, none of that friction exists. I experienced it directly with Healthy Pathways: every feature I imagined got built. There was no one to say "is this actually necessary?" The app grew until users told me it was too much — and by then I'd already built the complexity in.
+
+In a traditional environment, the organization does some of the simplification work for you. In an AI-enabled environment, it's entirely on the PM. The discipline has to be internal: a personal rule to ask "what can I remove?" before asking "what should I add?" That question doesn't come naturally. You have to build the habit deliberately — or build it into how you prompt.
 
 
 Q17. When building is cheap, the temptation to add one more feature is
      constant. What's the discipline that prevents that? Is it a process, a
      principle, or just personal taste?
+It's a process guided by principle and the principle is a single question: does this add value beyond what the product already delivers?
+
+There's a feature sitting in my Healthy Pathways backlog right now called "Prep for a Doctor's Visit." The idea: a user with an upcoming appointment could use the dashboard to prepare their questions and test requests in advance. It would take a day to build.
+
+I haven't built it. The reason: the health assessment already generates a one-page summary with exactly those things: questions to raise with your doctor and blood tests to request. Adding a separate "prep" entry point doesn't create new value, it creates a second path to the same destination. The risk of shipping it anyway is a more cluttered product that makes users think they're missing something when they're not.
+
+In a world where building is cheap, "not yet" has to be a deliberate answer, not a default. The discipline is holding a feature in limbo until you can answer why it's better than what you already have — not just different.
 
 YOUR ANSWER:
 
@@ -228,7 +258,13 @@ Q18. Give me an example — from either Healthy Pathways or MB Connect — where
      shipped or half-built. What made you cut it?
 
 YOUR ANSWER:
+The most counterintuitive thing I did: added backend complexity to reduce frontend complexity.
 
+Healthy Pathways launched as a 5-step assessment. Alpha feedback showed two clear drop-offs: most users stopped after step one (demographics), and those who continued stalled at biomarker entry. The funnel was losing people before they ever saw an analysis.
+
+The obvious move was to cut steps. But cutting would have gutted the product - a shallow health assessment isn't useful. So instead I changed what users experienced, not what the product could do. I simplified the UX to reduce the sense of being overwhelmed, and reworked the AI layer to deliver meaningful analysis at any level of data entered — routing lighter inputs to Claude Haiku for a faster result, richer inputs to Claude Sonnet for depth.
+
+That backend rework required building new logic I hadn't planned for. But it let me keep the full value of the product while eliminating the friction that was stopping users from reaching it. Sometimes simplifying the experience means the opposite of simplifying the code.
 
 ────────────────────────────────────────────────────────────────────────────────
 SECTION 7 — THE BIGGER PICTURE
@@ -240,14 +276,22 @@ Q19. There's a version of AI-enabled delivery that democratizes product
      actually happens, and what's the PM's role in which version wins?
 
 YOUR ANSWER:
+The argument shouldn't be about making more things or shipping them faster. It's about shipping value. The individuals who build their own tools will mostly solve their own problems well. What they'll do is raise the floor on user expectations: when someone can one-click-build a passable solution to their problem, the bar for what a company needs to ship to be worth using goes up.
 
+That's actually the most important thing for PMs right now. The threat isn't that individuals will out-ship companies. It's that the gap between "someone built this in a weekend" and "this is worth paying for" is collapsing. The PM's job becomes sharper, not broader: you're not managing delivery speed, you're defending why what you're building is worth building at all.
+
+The companies that win won't be the ones who ship the most. They'll be the ones who ship things that individual builders can't; things that require scale, trust, integrations, institutional knowledge, or deep domain expertise. That's where PMs should be spending their judgment.
 
 Q20. What's the one thing you wish someone had told you before you started
      building with AI tools — not about the tools themselves, but about what
      it would change about how you think as a PM?
 
 YOUR ANSWER:
+The thing that surprised me wasn't what stayed important, it was how quickly I stopped acting like it was.
 
+PRDs, hypothesis-driven experimentation, building for customer value over feature count: none of that changes. AI reduces friction at every stage of delivery, but the fundamentals of good product thinking are just as load-bearing as they've always been.
+
+What I didn't expect was how seductive the speed would be. When you can build fast, slowing down to ask "should we build this at all?" feels like a drag. It isn't - it's the job. The PMs who lose the thread in an AI-enabled world won't fail because they don't know the principles. They'll fail because speed made it easy to stop applying them. You end up shipping more. You don't end up shipping better.
 
 ================================================================================
 NOTES / THEMES TO DEVELOP
@@ -255,6 +299,9 @@ NOTES / THEMES TO DEVELOP
 
 (Use this space to jot raw ideas, connections between answers, or angles
 you want to develop further for LinkedIn / Substack posts.)
-
+1) This Q&A format is great to extract ideas, but across the sections, the themes get repetitive. As we convert this into LinkedIn posts, I want to reduce the repetition so that readers don't feel I'm banging them over the head with the same thing over and over. That said, I want to ensure that the themes are crystal clear and will indeed surface over and over as PMs begin to build with AI. Let's find a way to balance the repetition with themes that are present even when asking different types of questions.
+2) This Q&A doesn't explain the Healthy Pathways or MB Connect apps at all. I'd like to ensure that one post is dedicated to what I actually built, including the tools that I used and the process of building. As me more questions about this if needed, but much of that is already included in the portfolio found within index.html
+3) This Q&A is split into 7 sections however the LinkedIn posts may need to be a different number of posts. Consider the themes across all of this and pull from different sections in order to create meaningful posts
+4) In my posts, I want to relay to readers that I'm not trying to sell them on a class, a SAAS subscription, or even buying into a different product framework. I'd like to include a light-hearted "disclaimer" about this since so many LinkedIn posts are about convincing people to buy something or use some new-fangled framework. My posts should focus the reader on what I did to build, my learnings from that, and what other people can takeaway from the work that I did.
 
 ================================================================================

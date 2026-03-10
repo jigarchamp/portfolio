@@ -1,0 +1,86 @@
+================================================================================
+POST 1 — THE INTRO
+"I Bombed the AI Questions. So I Built Something."
+================================================================================
+
+INTENDED AUDIENCE
+PMs, engineering managers, hiring managers, people between roles. High
+relatability for anyone who has felt imposter syndrome around AI in interviews.
+
+ANTICIPATED COMMENTS/QUESTIONS TO PREEMPT IN THE TEXT:
+- "Isn't this just vibe coding?" → address without being defensive
+- "What did it cost / how long did it take?" → answer explicitly
+- "What's your background?" → answer, it builds credibility + relatability
+- "Are these apps live?" → yes, link at the end
+- "Why these two apps?" → explain the origin story
+
+NOTE: First 2-3 lines are all LinkedIn shows before "...see more" — the hook
+      must work on its own.
+
+────────────────────────────────────────────────────────────────────────────────
+DRAFT
+────────────────────────────────────────────────────────────────────────────────
+
+I bombed the AI questions in every interview after Amazon laid me off.
+
+I panel-interviewed at Meta, Google, and OpenAI and failed at discussing AI at any depth. Not spectacularly, I could feel myself drifting and pull it back. But afterward I'd replay those
+conversations, redraft what I should have said, and eventually admit the uncomfortable truth: I was BSing my way through anything that touched AI in a serious way.
+
+Reading more frameworks wasn't going to fix that.
+
+So in February, I decided to build something instead. I had time, I had motivation, and I had nothing to lose.
+
+I'm a Senior Technical Product Manager who started my career writing database applications to
+calculate FICO scores. I've done personal side projects over the years. I can read code better than I write it. Going into this, I was more Stackoverflow than GitHub.
+
+With a $20/month Claude subscription and free accounts on GitHub, Vercel, and Supabase, I built two apps over four weeks:
+
+Healthy Pathways — an AI-powered personal health assessment. You enter your demographics, lifestyle, and lab results; it generates a structured health review with traffic-light indicators and questions to bring to your doctor. Stood it up in a weekend.
+
+MB Connect — a merit badge management platform for BSA Scout troops with role-based access for scouts, counselors, leaders, and admins. This took four days, mostly because I spent more time upfront thinking through the problem before building any features.
+
+I wasn't trying to become an engineer. I was trying to understand what an engineer actually experiences; the tradeoffs, the decisions that happen below the spec, what changes when AI tools are in the loop for both engineers and PMs. You don't get that from reading about it.
+
+Quick disclaimer before I go further:
+
+I'm not teaching a course. I'm not pitching a framework. There's no Substack paywall or SaaS subscription at the end. I built two apps, hit a lot of walls, and wrote down what I learned. That's it.
+
+Over the next few posts, I'll share what actually changed about how I think as a PM — and what didn't. Not which tools to use, but what it feels like to use them, and what that does to how you work.
+
+How many of us are actually building with AI right now — and how many are reading about it and hoping the question doesn't come up in the next interview?
+
+If you want to see what I built: https://jigarchamp.github.io/portfolio/
+
+I'm currently between roles and actively looking for my next PM opportunity. If you're hiring a Senior TPM who's been in the trenches with AI tools, I'd love to connect.
+
+
+────────────────────────────────────────────────────────────────────────────────
+NOTES FOR REVISION
+────────────────────────────────────────────────────────────────────────────────
+
+HOOK TEST: "I bombed the AI questions in every interview after leaving Amazon."
+→ Works standalone before the "...see more" cutoff. Specific, vulnerable,
+  immediately relatable to anyone who's been in PM interviews lately.
+
+VIBE CODING PREEMPTION: "I wasn't trying to become an engineer. I was trying to
+understand what an engineer actually experiences..." handles the objection
+without naming it. Naming it would give it too much oxygen.
+
+LENGTH: ~330 words / ~1,700 characters. Slightly above LinkedIn's engagement
+sweet spot (~1,300 chars) but appropriate for a series kickoff. Could trim
+the Healthy Pathways and MB Connect descriptions if it feels long.
+
+ENDING QUESTION: Designed to drive comments from people who've been in PM
+interviews, felt imposter syndrome, or are in a similar between-roles moment.
+Broad enough to get responses, specific enough to be interesting.
+
+WHAT TO ADD/CONFIRM BEFORE POSTING:
+- Real portfolio URL in place of [portfolio link]
+- Decide whether to name Amazon explicitly (you did above, and it adds
+  credibility — Amazon PM carries weight for the audience)
+- Decide how explicitly to address being between roles. Current draft implies
+  it without stating it. If you want to be direct, add one line after "So in
+  February, I decided to build something instead." like: "I had time, I had
+  motivation, and I had nothing to lose."
+
+================================================================================
