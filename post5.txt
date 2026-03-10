@@ -1,0 +1,123 @@
+================================================================================
+POST 5 — EXPERIMENTS WITHOUT HYPOTHESES ARE JUST SHIPPING
+"Cheap Building Doesn't Change What Makes an Experiment Real"
+================================================================================
+
+INTENDED AUDIENCE
+PMs and growth teams who run experiments, data scientists who've reviewed
+underpowered tests, anyone who's been in a post-launch review where nobody
+could interpret the results. "Fail fast" advocates will push back — the post
+reframes it as "learn fast" without being confrontational.
+
+ANTICIPATED COMMENTS/QUESTIONS TO PREEMPT IN THE TEXT:
+- "Isn't this just fail fast?" → no: fail fast means learn fast, and you
+  can't learn from a result you weren't set up to interpret
+- "You can always learn something from shipping" → only if you defined
+  what you were trying to learn before you shipped
+- "How do you know when an experiment is worth running?" → answer it
+  explicitly: if a clear result wouldn't change what you build next,
+  it's not worth running
+
+NOTE: Posts 1-4 established the pattern. This post is more tactical. The
+HP story ties back to Post 3 (same rules-based arc) but the lesson here is
+about hypothesis, not simplification. Acknowledge the callback briefly.
+
+────────────────────────────────────────────────────────────────────────────────
+DRAFT
+────────────────────────────────────────────────────────────────────────────────
+
+When I shipped the rules-based assessment for Healthy Pathways, I had a clear
+goal: make things fast and simple for new users.
+
+What I didn't have was a hypothesis about value. I was optimizing for speed
+without asking what a new user would actually do with the result. The feedback
+told me: the assessments lacked depth. I redesigned around Claude Haiku and
+got both speed and depth by letting users answer a few more questions to shape
+the output.
+
+But here's what I got wrong before I got it right: I originally framed it as
+speed versus depth, as if they were opposites. They weren't. The real question
+I hadn't asked was: what would make a new user feel this was worth their time?
+That's a hypothesis. "Let's ship something fast" is not.
+
+[Healthy Pathways: https://healthy-pathways.vercel.app/]
+
+I've made the same mistake in a professional setting and the cost was harder
+to measure. At Amazon, we made a round of improvements to an ads carousel on
+the Appstore homescreen. The changes worked well in testing. When we pushed
+to production, the ads performed better than before. But there was no
+meaningful difference compared to ads placed elsewhere in the UI, and we
+couldn't isolate what was driving the lift.
+
+We stuck with the changes and moved on to a longer-term rebuild. To this day,
+I don't know if that work was a genuine win or just productive-looking busy
+work. We shipped without defining what a clear result would mean, and so we
+couldn't interpret the result we got.
+
+That's the failure mode cheap building accelerates. When a feature takes a
+sprint to build, teams are willing to do the hypothesis work first. When it
+takes a day, "let's just ship it and see" starts to feel like a reasonable
+plan. It isn't. You can't learn from a result you weren't set up to interpret.
+
+The discipline I've landed on: before running anything, ask one question.
+If this experiment returns a clear result, would it change what we build next?
+If the answer is "not really," the experiment isn't worth running regardless
+of how cheap it is to build.
+
+I had to apply that discipline during the skills integration project. Customer
+interviews surfaced a lot of feedback, but when I worked through it, the
+meaningful insights pointed to flows upstream and downstream from the Appstore
+itself. The concerns specific to what we owned were real but peripheral. The
+real customer benefit would happen elsewhere.
+
+So instead of drafting revised requirements and testing demos in Appstore, I
+redirected the work to product colleagues in other parts of the experience.
+The experiment we almost ran wouldn't have produced signal that would change
+the Appstore roadmap. Running it would have felt like progress. It would have
+been noise.
+
+"Fail fast" was never about failing. It was always about learning quickly.
+The shortcut isn't skipping the hypothesis. The shortcut is knowing in advance
+exactly what result would change your next decision.
+
+Have you ever looked at experiment results and realized you couldn't tell what
+they meant because you hadn't decided in advance what they would mean?
+
+[Full portfolio: https://jigarchamp.github.io/portfolio/]
+
+────────────────────────────────────────────────────────────────────────────────
+NOTES FOR REVISION
+────────────────────────────────────────────────────────────────────────────────
+
+HOOK TEST: "When I shipped the rules-based assessment for Healthy Pathways,
+I had a clear goal: make things fast and simple for new users. What I didn't
+have was a hypothesis about value." Works before "see more." Sets up the
+contrast between optimization metric and actual hypothesis immediately.
+
+THE HP CALLBACK: Post 3 covered the rules-based story from a simplification
+angle. Here it's the same event but a different lesson: not "what did I
+rebuild?" but "what question did I forget to ask?" Brief, doesn't repeat.
+
+THE ADS STORY: "To this day I don't know if it was a win or busy work" is
+the most honest line in the post. It will generate comments from people who've
+been in the same ambiguous post-launch review. Keep it.
+
+THE SKILLS REDIRECT: This is the positive example — choosing not to run the
+wrong experiment. Positions decision-making as a senior PM skill, not just
+an execution skill. Good signal for hiring managers.
+
+ENDING QUESTION: "Have you ever looked at experiment results and realized you
+couldn't tell what they meant because you hadn't decided in advance what they
+would mean?" Almost everyone has. Will get "yes, and here's what happened"
+responses.
+
+WHAT DOESN'T REPEAT FROM POSTS 1-4:
+- HP rules-based is the same event as Post 3 but a different lesson
+- No vagueness theme (Post 2), no leadership/direction theme (Post 4)
+- "AI makes it cheaper to skip the hypothesis" is the bridge, not the lead
+
+LENGTH: ~450 words. Could trim if needed by shortening the ads story — the
+key beats are: shipped without hypothesis, results ambiguous, couldn't
+interpret, still don't know. The context can compress.
+
+================================================================================
