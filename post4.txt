@@ -1,0 +1,143 @@
+================================================================================
+POST 4 — FASTER IS NOT THE POINT
+"When Leaders Push for Speed, PMs Need to Ask: Speed Toward What?"
+================================================================================
+
+INTENDED AUDIENCE
+Senior PMs, product directors, VPs, anyone who has been in a "move faster"
+conversation from either side. The Japan story will resonate with people who've
+shipped features nobody needed. The principal conversation will resonate with
+anyone who's had to manage up carefully. The roadmap admission will get
+comments: "I do this too."
+
+ANTICIPATED COMMENTS/QUESTIONS TO PREEMPT IN THE TEXT:
+- "The Japan story is just groupthink" → he already preempts it ("not quite
+  groupthink") — keep that nuance
+- "How do you push back without seeming like you're blocking progress?" →
+  the principal story answers it: don't go in with grievances, go in with
+  a bigger picture question
+- "This sounds good in theory but what does it look like in practice?" →
+  the roadmap admission handles this honestly: even knowing the right approach,
+  execution pressure wins
+
+NOTE: Posts 1-3 were grounded in the HP/MB Connect building experience.
+This post steps back to Amazon. Tie back briefly to the series theme: the
+Japan problem predates AI tools. Cheap building just makes it easier to
+repeat at scale.
+
+────────────────────────────────────────────────────────────────────────────────
+DRAFT
+────────────────────────────────────────────────────────────────────────────────
+
+A year after a product launched in Japan, I was brought in to figure out what
+more we could build on top of it.
+
+I left asking why we built it at all.
+
+The feature had been approved based on optimistic adoption projections and
+competitive parity. Competitors offered something similar, the idea felt right,
+and a lot of people signed up for work that produced a clear deliverable. What
+it didn't produce was a clear answer to why customers would care. By the time
+I got there, the data told the story: adoption was flat, and the customers the
+product was built for hadn't asked for it.
+
+This wasn't a delivery failure. The team shipped on time. It was a
+clarity failure, upstream of everything else.
+
+I thought about that project a lot while I was building with AI tools this
+year. The problem it represents isn't new. But in a world where features take
+days instead of quarters to ship, it's easier than ever to repeat it. Speed
+without a value thesis just means arriving at the wrong place faster.
+
+The most important leadership conversation a PM can have right now isn't about
+velocity. It's about direction.
+
+I learned that the hard way on a different project. We were integrating Alexa
+skills into the Appstore, and for a stretch of weeks, the product and
+technical complexity kept growing. More logic, more caveats, more edge cases.
+The team was moving, but something felt off.
+
+I went to my Principal. Not with a list of grievances, and not with a proposed
+solution. I said: the complexity we're seeing is a signal that something isn't
+right at the bigger picture level. I don't know what the answer is, but I
+don't think the answer is to keep pushing.
+
+That conversation led to a product simplification. The technical complexity
+followed. And when we finally shipped, the stakeholders who'd been waiting
+told us the simplified version addressed doubts they'd had all along but
+hadn't raised. We hadn't just removed friction from the build. We'd removed
+friction from the product.
+
+Sometimes the path to delivery isn't pushing through. It's pausing long enough
+to ask whether the direction is right.
+
+I'll be honest about where I fall short on this: I know the right format for
+a roadmap. Problem statement. Hypothesis. Success metric. Target date. I've
+used it at the PRFAQ stage and in QBRs. But between those two moments, when
+the team is heads-down and delivery pressure is real, I fall back to the
+feature list like everyone else. The bullet points of shipped things feel good.
+They're easy to report. They're also the wrong unit of measurement for whether
+you're actually moving anywhere.
+
+AI doesn't change that failure mode. It just makes it cheaper to repeat.
+
+When your leader asks you to move faster, the right response isn't "we can't"
+or even "we will." It's: let's make sure we agree on what faster is for. What
+does success look like? How will we know we got there? What do we do if the
+first version doesn't move the needle? And even if you don't know the answers, just asking those questions is a powerful way to get clarity.
+
+The questions either surface the alignment you need, or expose that nobody
+has thought it through yet. Either way, you're better off knowing before the
+team ships.
+
+When did you last push your team to move faster and already know what you were
+moving toward?
+
+[Full portfolio: https://jigarchamp.github.io/portfolio/]
+
+────────────────────────────────────────────────────────────────────────────────
+NOTES FOR REVISION
+────────────────────────────────────────────────────────────────────────────────
+
+HOOK TEST: "A year after a product launched in Japan, I was brought in to
+figure out what more we could build. I left asking why we built it at all."
+Works before "see more." Subverts the expected "here's what I learned by
+building more" setup. Forces the "what happened?" question immediately.
+
+THE JAPAN STORY: Keep the "not quite groupthink" nuance. The more precise
+framing is: people made individually rational decisions (competitor parity,
+clear deliverable) that added up to a collectively bad outcome. That's more
+honest and more interesting than "leadership made a bad call."
+
+THE PRINCIPAL CONVERSATION: The key move is "I didn't go in with grievances,
+I went in with a bigger picture question." That's the tactical PM advice
+buried in the story. Readers who've been afraid to raise concerns with
+leadership will use this framing.
+
+THE ROADMAP ADMISSION: "I fall back to the feature list like everyone else"
+is the self-aware/brave beat this post needs. Without it, the post reads as
+advice from someone who has it all figured out. With it, the post reads as
+hard-won honesty.
+
+ENDING QUESTION: "When did you last push your team to move faster and already
+know what you were moving toward?" Directed at leaders and senior PMs. Will
+land differently depending on which side of the conversation you're usually on.
+
+WHAT DOESN'T REPEAT FROM POSTS 1-3:
+- No HP/MB Connect stories (deliberate shift to Amazon for range)
+- No background recap, no disclaimer
+- "AI makes it worse" is the bridge back to the series, not the lead
+
+LENGTH: ~450 words. On the longer side but earns it. The three beats (Japan,
+principal conversation, roadmap admission) each need room to land. If
+trimming needed, compress the principal conversation to two paragraphs instead
+of three.
+
+WHAT TO CONFIRM BEFORE POSTING:
+- The Japan payment instrumentation project: is there anything
+  confidential? Story uses no metrics, no product names beyond geography,
+  no internal code names. Should be fine.
+- "Alexa skills into Appstore" appears in Post 2 as well. Brief callback is
+  fine but ensure it's clear this is a different lesson from the same project.
+
+================================================================================
