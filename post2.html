@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineers Absorbed Your Vagueness. AI Won't. — Jigar Champaneria</title>
+  <meta name="description" content="I logged out of MB Connect to test the guest experience. The dashboard was empty. It taught me something about PM vagueness I'd spent years not noticing." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b7280;
+      text-decoration: none;
+      margin-bottom: 48px;
+    }
+    .back:hover { color: #4f46e5; }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #4f46e5;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+      margin-bottom: 32px;
+      color: #111827;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .meta a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .meta a:hover { text-decoration: underline; }
+
+    .post p {
+      font-size: 17px;
+      color: #1f2937;
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+
+    .post a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .post a:hover { text-decoration: underline; }
+
+    .post .callout {
+      background: #eef2ff;
+      border-left: 3px solid #4f46e5;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 32px 0;
+    }
+    .post .callout p {
+      margin: 0;
+      font-size: 15px;
+      color: #3730a3;
+    }
+
+    .post .question {
+      font-size: 17px;
+      font-style: italic;
+      color: #374151;
+      margin: 40px 0 24px;
+    }
+
+    .series-nav {
+      display: flex;
+      gap: 12px;
+      margin: 48px 0 0;
+      padding-top: 32px;
+      border-top: 1px solid #e5e7eb;
+      flex-wrap: wrap;
+    }
+    .series-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity .15s;
+    }
+    .series-nav a:hover { opacity: .8; }
+    .series-nav .prev {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+    .series-nav .portfolio {
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <a class="back" href="https://jigarchamp.github.io/portfolio/">
+    ← Back to portfolio
+  </a>
+
+  <div class="eyebrow">Post 2 of 6 — AI Product Management</div>
+
+  <h1>Engineers Absorbed Your Vagueness.<br>AI Won't.</h1>
+
+  <div class="meta">
+    Jigar Champaneria &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; 4 min read
+    &nbsp;·&nbsp; <a href="post1.html">← Read Post 1 first</a>
+  </div>
+
+  <div class="post">
+
+    <p>I logged out of <a href="https://mb-connect.vercel.app/" target="_blank" rel="noopener">MB Connect</a> to test the guest experience.</p>
+
+    <p>The dashboard was empty. Not broken — empty. No merit badges. No classes. No way for an unauthenticated user to discover anything.</p>
+
+    <p>I had written that scouts should be able to view merit badges. I hadn't written anything about what unauthenticated users could see. I assumed it was obvious. It wasn't — and Claude had no way to know what I meant because I hadn't finished the thought myself.</p>
+
+    <p>Fixing it forced me to think through something I'd never explicitly done: not just what unauthenticated users should see, but what they shouldn't. The positive flow and the negative flow. I had vaguely described one and hadn't even touched upon the other.</p>
+
+    <div class="callout">
+      <p>This isn't a new problem. It's a PM problem that AI makes impossible to hide.</p>
+    </div>
+
+    <p>At Amazon, my first project involved surfacing Alexa skills in Appstore discovery flows. My requirement: <em>"skills should be discoverable alongside apps when users are logged in."</em> The design mockups looked great. The flows made sense. I felt good about it.</p>
+
+    <p>Then the senior engineer came back with a prototype.</p>
+
+    <p>Skills I expected to see weren't showing up except through explicit search. Browse performance was bad. What followed was a product/engineering deep dive — the kind where engineers explain the real constraints and a PM quietly realizes how much they left out of the original requirement. I went back and rewrote the spec from scratch: positive flows, negative flows, open questions included.</p>
+
+    <p>I didn't write a better spec because I was smarter. I wrote it because an engineer showed me what I'd missed.</p>
+
+    <p>That's what I didn't appreciate until I built something myself: good engineers are an underrated quality-control mechanism. The questions they ask in working sessions — frustrating as they are in the moment — force you to find the gaps in your own thinking before any code gets written.</p>
+
+    <p>AI skips that step entirely. It executes what you described. If you described the wrong thing, you won't find out until you're looking at a working prototype of the wrong product.</p>
+
+    <p>When I found that empty dashboard, I felt dumb. The parallel to Amazon was obvious and I couldn't shake it. I had built something based on incomplete thinking — and the back and forth friction I was used to with real engineering teams was nowhere to be found.</p>
+
+    <p>I had only myself, and a non-sentient chatbot, to blame.</p>
+
+    <p>What I do differently now: before I write a single prompt, I define both what should happen and what shouldn't. Guest vs. authenticated. Logged in vs. logged out. Known user vs. unknown user. It's the same discipline good specs always required — I just finally felt the cost of skipping it.</p>
+
+    <p class="question">If you're an engineer reading this: how many times have you quietly absorbed a PM's vagueness and they never knew?</p>
+
+  </div>
+
+  <div class="series-nav">
+    <a class="prev" href="post1.html">← Post 1: I Bombed the AI Questions</a>
+    <a class="portfolio" href="https://jigarchamp.github.io/portfolio/" target="_blank" rel="noopener">See what I built →</a>
+  </div>
+
+  <footer>
+    <p>Written by <a href="https://www.linkedin.com/in/jigarchamp/">Jigar Champaneria</a> &nbsp;·&nbsp; <a href="https://jigarchamp.github.io/portfolio/">Portfolio</a> &nbsp;·&nbsp; <a href="https://github.com/jigarchamp">GitHub</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>

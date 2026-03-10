@@ -1,0 +1,125 @@
+================================================================================
+POST 2 — THE VAGUENESS POST
+"Engineers Absorbed Your Vagueness. AI Won't."
+================================================================================
+
+INTENDED AUDIENCE
+PMs who write specs, engineers who've absorbed vague requirements silently,
+hiring managers who care about PM rigor. Engineers will feel seen. PMs will
+feel called out — in a good way.
+
+ANTICIPATED COMMENTS/QUESTIONS TO PREEMPT IN THE TEXT:
+- "Why didn't you just write better specs?" → addressed: I thought I had
+- "Isn't this obvious?" → no, because you never feel the cost yourself
+- Engineers: "Yes, we always do this" → validate that explicitly
+- "What did you change after this?" → answer it in the post
+- "Isn't this just vibe coding?" → the Amazon story preempts this:
+  this isn't a new-to-AI problem, it's a PM problem AI makes more visible
+
+NOTE: Post 1 established background, disclaimer, between-roles status.
+      Don't repeat any of that here. One brief callback to MB Connect is fine
+      since some readers will arrive at Post 2 without reading Post 1.
+
+────────────────────────────────────────────────────────────────────────────────
+DRAFT
+────────────────────────────────────────────────────────────────────────────────
+
+I logged out of MB Connect to test the guest experience.
+
+The dashboard was empty. Not broken — empty. No merit badges. No classes. No
+way for an unauthenticated user to discover anything.
+
+I had written that scouts should be able to view merit badges. I hadn't
+written anything about what unauthenticated users could see. I assumed it
+was obvious. It wasn't — and Claude had no way to know what I meant because
+I hadn't finished the thought myself.
+
+[MB Connect: https://mb-connect.vercel.app/]
+
+Fixing it forced me to think through something I'd never explicitly done: not
+just what unauthenticated users should see, but what they shouldn't. The
+positive flow and the negative flow. I had vaguely described one and hadn't even touched upon the other.
+
+This isn't a new problem. It's a PM problem that AI makes impossible to hide.
+
+At Amazon, my first project involved surfacing Alexa skills in Appstore
+discovery flows. My requirement: "skills should be discoverable alongside apps
+when users are logged in." The design mockups looked great. The flows made
+sense. I felt good about it.
+
+Then the senior engineer came back with a prototype.
+
+Skills I expected to see weren't showing up except through explicit search.
+Browse performance was bad. What followed was a product/engineering deep dive
+— the kind where engineers explain the real constraints and a PM quietly
+realizes how much they left out of the original requirement. I went back and
+rewrote the spec from scratch: positive flows, negative flows, open questions
+included.
+
+I didn't write a better spec because I was smarter. I wrote it because an
+engineer showed me what I'd missed.
+
+That's what I didn't appreciate until I built something myself: good engineers
+are an underrated quality-control mechanism. The questions they ask in working
+sessions — frustrating as they are in the moment — force you to find the gaps
+in your own thinking before any code gets written.
+
+AI skips that step entirely. It executes what you described. If you described
+the wrong thing, you won't find out until you're looking at a working
+prototype of the wrong product.
+
+When I found that empty dashboard, I felt dumb. The parallel to Amazon was
+obvious and I couldn't shake it. I had built something based on incomplete
+thinking — and the back and forth friction I was used to with real engineering
+teams was nowhere to be found.
+
+I had only myself, and a non-sentient chatbot, to blame.
+
+What I do differently now: before I write a single prompt, I define both
+what should happen and what shouldn't. Guest vs. authenticated. Logged in vs.
+logged out. Known user vs. unknown user. It's the same discipline good specs
+always required — I just finally felt the cost of skipping it.
+
+If you're an engineer reading this: how many times have you quietly absorbed
+a PM's vagueness and they never knew?
+
+[Full portfolio: https://jigarchamp.github.io/portfolio/]
+
+────────────────────────────────────────────────────────────────────────────────
+NOTES FOR REVISION
+────────────────────────────────────────────────────────────────────────────────
+
+HOOK TEST: "I logged out of MB Connect to test the guest experience. The
+dashboard was empty." → Concrete, visual, no setup required. Works before
+"see more."
+
+ENGINEER/PM BALANCE: The Amazon story validates engineers without being
+sycophantic. The RLS story calls out PMs without lecturing. Both land better
+together than either would alone.
+
+ENDING QUESTION: Directed at engineers specifically — "how many times have
+you quietly absorbed a PM's vagueness and they never knew?" This will get
+comments from both sides. Engineers will confirm it. PMs will feel it.
+
+THE "NON-SENTIENT CHATBOT" LINE: Keep it. It's self-deprecating, slightly
+funny, and earns the vulnerability. Readers who followed from Post 1 will
+appreciate the consistency in tone.
+
+CALLBACK TO POST 1: MB Connect is linked with a one-liner. No need to
+re-explain — anyone who came from Post 1 knows it. Anyone who didn't has
+enough context from the RLS story.
+
+LENGTH: ~390 words. Slightly longer than ideal but the Amazon story earns
+its length — cutting it would lose the "this isn't a new problem" point.
+If trimming is needed, shorten the Amazon paragraph about skills/browse
+performance.
+
+WHAT TO CONFIRM BEFORE POSTING:
+- The Alexa/Appstore project: is there anything in this story that's
+  Amazon-confidential? The story is general enough that it shouldn't be,
+  but worth a check. No metrics, no product names beyond "Appstore" and
+  "Alexa skills" which are public products.
+- Do you want to name the senior engineer or leave anonymous? Current draft
+  leaves them anonymous — probably right.
+
+================================================================================
