@@ -1,0 +1,122 @@
+================================================================================
+POST 3 — THE DISCIPLINE OF NOT BUILDING
+"Simplifying for Users Means Complicating the Code"
+================================================================================
+
+INTENDED AUDIENCE
+PMs who over-build, product leaders who equate "more features" with progress,
+anyone who's felt the pull of cheap building. The alpha feedback angle will
+resonate with early-stage builders. The "not building" angle will resonate
+with senior PMs who've seen feature bloat kill products.
+
+ANTICIPATED COMMENTS/QUESTIONS TO PREEMPT IN THE TEXT:
+- "Why not just keep the rules-based version as a fallback?" → it wasn't
+  adding value over what already existed (Google)
+- "How did you know Haiku was right vs. Sonnet?" → research + testing, not
+  instinct
+- "Isn't this just iteration?" → yes, but the discipline is knowing when to
+  tear down vs. when to keep building
+- "How do you decide what NOT to build?" → answer it: does this create new
+  value beyond what already exists?
+
+NOTE: Posts 1 & 2 established background, disclaimer, between-roles status,
+and the "AI removes friction" theme. Don't repeat those. One brief reference
+to Healthy Pathways is enough — readers know it. The rules-based → Haiku story
+is new and specific to this post.
+
+────────────────────────────────────────────────────────────────────────────────
+DRAFT
+────────────────────────────────────────────────────────────────────────────────
+
+I built a rules-based health analysis into Healthy Pathways specifically to
+simplify things for new users. No AI model, no wait time, instant results.
+
+An alpha tester looked at it and told me it felt no different than Googling
+his age, weight, and ethnicity.
+
+He was right. I tore it down.
+
+[Healthy Pathways: https://healthy-pathways.vercel.app/]
+
+What came next was messier than I expected. I replaced the rules-based logic
+with Claude Sonnet, the same model I use for authenticated users. It was too slow
+and too verbose. It didn't feel like a simpler experience, just a wordier one.
+So I went back and researched the model options more carefully. Claude Haiku
+turned out to be the right fit: faster, cheaper, and with enough depth to
+actually give a new user something worth reading.
+
+The final result was more backend complexity than I'd started with. I'd torn
+down a "simple" solution, iterated twice, and landed on something harder to
+build that was genuinely simpler to use.
+
+I learned this from a conversation, not a dashboard. I don't have analytics
+wired up yet, so when alpha users told me something wasn't clicking, I had to
+rely on what they said — not what the numbers showed. I'm a data-driven PM by
+default, and I had to actively resist the urge to dismiss the feedback as "they
+just don't get it." They got it fine. Something I'd built wasn't earning their
+attention, and that was on me.
+
+The harder lesson came later. I was talking to my uncle — he hadn't tried the
+app, he just knew I was building it. He asked me: "Should I get an
+echocardiogram?"
+
+He wasn't asking for a feature. He wasn't asking for a prep checklist or a
+guided flow. He wanted a clear answer to a specific question.
+
+I realized the app would already give him that. The one-page summary it
+generates includes exactly that kind of recommendation — what to ask for, what
+to flag, what to monitor. The problem wasn't a missing feature. The problem
+was that the answer was buried well enough that a new user couldn't find it.
+
+Around the same time, alpha users were asking me to build more around doctor
+visits — more questions, more tools, more ways to prepare. I understood the
+request. I said no to most of it. Not because the idea was bad, but because
+building another path to the same destination would clutter the product and
+make users feel like they were missing something when they weren't.
+
+The discipline isn't about building less. It's about asking what you already
+have before you reach for something new.
+
+In a world where building is cheap, that question gets harder to ask. The next
+feature is always one prompt away. The right answer is almost always to make
+what exists better.
+
+What feature have you built recently that you later realized was already
+covered by something you'd shipped six months ago?
+
+[Full portfolio: https://jigarchamp.github.io/portfolio/]
+
+────────────────────────────────────────────────────────────────────────────────
+NOTES FOR REVISION
+────────────────────────────────────────────────────────────────────────────────
+
+HOOK TEST: "I built a rules-based health analysis into Healthy Pathways
+specifically to simplify things for new users. An alpha tester told me it felt
+no different than Googling his age, weight, and ethnicity." → Works before
+"see more." Concrete, counterintuitive (built to simplify → told it's
+worthless), immediately raises "so what did you do?" question.
+
+THE UNCLE MOMENT: Strongest beat in the post. A non-user, a real family
+conversation, no tech context — and it clarified the product better than any
+beta session. Worth keeping exactly as is.
+
+THE ALPHA FEEDBACK LINE: "I had to actively resist the urge to dismiss the
+feedback as 'they just don't get it'" — every PM has been here. This is the
+self-aware/brave note the user wants consistent across the series.
+
+ENDING QUESTION: "What feature have you built recently that you later realized
+was already covered by something you'd shipped six months ago?" — directed at
+PMs and builders, invites honest reflection rather than a debate. Should
+generate comments.
+
+WHAT DOESN'T REPEAT FROM POSTS 1 & 2:
+- No background, no disclaimer, no between-roles
+- "AI removes friction" is implied (cheap building = temptation to add) but
+  not restated explicitly — Post 2 owns that angle
+- New angle: cost of over-building vs. cost of under-specifying (Post 2)
+
+LENGTH: ~420 words. Slightly long. If trimming needed, shorten the Sonnet
+iteration paragraph — the key beats are rules-based → worthless → Haiku →
+worked. The middle step (Sonnet too slow) can compress to one sentence.
+
+================================================================================
