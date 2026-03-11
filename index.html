@@ -22,7 +22,7 @@
       --green-light: #ecfdf5;
       --radius: 12px;
       --shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.05);
-      --shadow-lg: 0 4px 6px rgba(0,0,0,.07), 0 10px 30px rgba(0,0,0,.08);
+      --text-body: #374151;
     }
 
     html { scroll-behavior: smooth; }
@@ -122,25 +122,6 @@
       line-height: 1.7;
       margin-bottom: 36px;
     }
-    .hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-    }
-    .chip svg { width: 14px; height: 14px; opacity: .7; }
-
     /* ── SECTION LABELS ────────────────────────────── */
     .section {
       max-width: 900px;
@@ -158,13 +139,25 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* ── WHY CARD ──────────────────────────────────── */
-    .why-card {
+    /* ── SHARED CARD BASE ──────────────────────────── */
+    .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 36px 40px;
       box-shadow: var(--shadow);
+    }
+
+    /* ── SHARED LABEL BASE ─────────────────────────── */
+    .label-sm {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    /* ── WHY CARD ──────────────────────────────────── */
+    .why-card {
+      padding: 36px 40px;
     }
     .why-card p {
       font-size: 16px;
@@ -195,6 +188,9 @@
     .why-list li {
       padding-left: 20px;
       position: relative;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.65;
     }
     .why-list li::before {
       content: '';
@@ -206,11 +202,6 @@
       border-radius: 50%;
       background: var(--accent);
     }
-    .why-list li {
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.65;
-    }
     .why-list li strong {
       font-weight: 600;
       color: var(--text);
@@ -221,10 +212,6 @@
 
     /* ── PROJECT CARD ──────────────────────────────── */
     .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
       overflow: hidden;
       margin-bottom: 32px;
     }
@@ -303,14 +290,13 @@
     .project-problem .project-section-title { margin-bottom: 10px; }
     .project-problem p {
       font-size: 14px;
-      color: #374151;
+      color: var(--text-body);
       line-height: 1.65;
     }
 
     .project-body {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
     }
     @media (max-width: 680px) {
       .project-body { grid-template-columns: 1fr; }
@@ -332,10 +318,6 @@
       }
     }
     .project-section-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
       color: var(--muted);
       margin-bottom: 14px;
     }
@@ -347,7 +329,7 @@
     }
     .project-section ul li {
       font-size: 14px;
-      color: #374151;
+      color: var(--text-body);
       line-height: 1.5;
       padding-left: 18px;
       position: relative;
@@ -395,17 +377,9 @@
       .learnings-grid { grid-template-columns: 1fr; }
     }
     .learning-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
       padding: 24px;
-      box-shadow: var(--shadow);
     }
     .learning-card-num {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
       color: var(--accent);
       margin-bottom: 10px;
     }
@@ -439,14 +413,7 @@
     }
     footer a:hover { text-decoration: underline; }
 
-    /* ── DIVIDER ───────────────────────────────────── */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      max-width: 900px;
-      margin: 0 auto 48px;
-    }
-  </style>
+</style>
 </head>
 <body>
 
@@ -455,7 +422,6 @@
   <div class="nav-inner">
     <a class="nav-name" href="#">Jigar Champaneria</a>
     <div class="nav-links">
-      <!-- Replace # with your actual LinkedIn and resume URLs -->
       <a class="nav-link" href="https://www.linkedin.com/in/jigarchamp/" target="_blank" rel="noopener">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
         LinkedIn
@@ -474,7 +440,7 @@
     <span class="dot"></span>
     AI Product Portfolio
   </div>
-  <h1>I bombed the AI PM questions. <br><em>So I built something.</em><br></h1>
+  <h1>I bombed the AI PM questions. <br><em>So I built something.</em></h1>
   <p class="hero-desc">
     After 10+ years in product, in 2025, I kept getting asked how I was using AI in my work. I didn't have a good answer. So I built two apps to find out what it takes to ship, the tradeoffs product teams face daily, and how AI is changing what's possible.
   </p>
@@ -482,7 +448,7 @@
 <!-- ── WHY ───────────────────────────────────────────── -->
 <section class="section">
   <div class="section-label">What I was trying to figure out</div>
-  <div class="why-card">
+  <div class="card why-card">
     <p>
       I kept asking myself: <strong>what does it actually feel like to build with AI tools when development cost is basically zero?</strong> Not just manage a team doing it, but write the specs, make the tradeoffs, and ship something real.
     </p>
@@ -504,38 +470,38 @@
   <div class="section-label">What I actually learned</div>
   <div class="learnings-grid">
 
-    <div class="learning-card">
-      <div class="learning-card-num">01: Acceleration ≠ Automation</div>
+    <div class="card learning-card">
+      <div class="label-sm learning-card-num">01: Acceleration ≠ Automation</div>
       <h3>AI tools make you faster, not autonomous</h3>
       <p>Claude Code moved fast, but every meaningful decision still needed my judgment. Vague requirements produce vague code: writing a clear spec for AI is the same skill as writing one for an engineer.</p>
     </div>
 
-    <div class="learning-card">
-      <div class="learning-card-num">02: The Bottleneck Shifts</div>
+    <div class="card learning-card">
+      <div class="label-sm learning-card-num">02: The Bottleneck Shifts</div>
       <h3>PM judgment, not engineering velocity, is the constraint</h3>
       <p>When AI handles implementation, the bottleneck shifts to product clarity: what to build, in what order, for whom. Good product thinking gets <em>more</em> valuable as AI tools mature, not less.</p>
     </div>
 
-    <div class="learning-card">
-      <div class="learning-card-num">03: Technical Fluency Changes Conversations</div>
+    <div class="card learning-card">
+      <div class="label-sm learning-card-num">03: Technical Fluency Changes Conversations</div>
       <h3>Shared vocabulary with engineers changes what's possible</h3>
       <p>Having built RLS policies, managed API costs, and wired up multi-step state myself, I now know which engineering tradeoffs are real and which are negotiable. That changes how I scope, estimate, and push back.</p>
     </div>
 
-    <div class="learning-card">
-      <div class="learning-card-num">04: Prompting is Requirement Writing</div>
+    <div class="card learning-card">
+      <div class="label-sm learning-card-num">04: Prompting is Requirement Writing</div>
       <h3>Writing a prompt is the same work as writing a requirement</h3>
       <p>Writing the health analysis prompt (output format, tone, edge cases, fallbacks) felt exactly like writing a PRD. PMs who thrive in AI will be the ones who can translate user needs directly into model instructions.</p>
     </div>
 
-    <div class="learning-card">
-      <div class="learning-card-num">05: Shipping Teaches What Planning Can't</div>
+    <div class="card learning-card">
+      <div class="label-sm learning-card-num">05: Shipping Teaches What Planning Can't</div>
       <h3>Real usage surfaces gaps no backlog anticipates</h3>
       <p>Every sprint, fixing one thing exposed the next gap. Cutting scope, resisting over-engineering, shipping anyway: you don't really learn that until you own the deadline.</p>
     </div>
 
-    <div class="learning-card">
-      <div class="learning-card-num">06: AI Creates New UX Problems</div>
+    <div class="card learning-card">
+      <div class="label-sm learning-card-num">06: AI Creates New UX Problems</div>
       <h3>Latency, uncertainty, and hallucination are product problems</h3>
       <p>Healthy Pathways had latency, partial outputs, and model uncertainty, all displayed to health-conscious users. None of that is an engineering problem. It's a product design problem, and spinners don't solve it.</p>
     </div>
@@ -548,7 +514,7 @@
   <div class="section-label">Projects</div>
 
   <!-- Healthy Pathways -->
-  <div class="project-card">
+  <div class="card project-card">
     <div class="project-header">
       <div class="project-icon icon-hp">🌿</div>
       <div class="project-title-group">
@@ -576,12 +542,12 @@
       </div>
     </div>
     <div class="project-problem">
-      <div class="project-section-title">The problem</div>
+      <div class="label-sm project-section-title">The problem</div>
       <p>People are unclear about which health areas to focus on or which tests to ask their doctor for. Healthy Pathways uses your demographics, lifestyle, and lab results to surface what matters most, not to replace your doctor, but to help you walk in to your visit with better questions.</p>
     </div>
     <div class="project-body">
       <div class="project-section">
-        <div class="project-section-title">Key Features</div>
+        <div class="label-sm project-section-title">Key Features</div>
         <ul class="features">
           <li>3-step assessment wizard with auto-save and resume; users never lose progress</li>
           <li>AI-driven concern recommendations based on age, ethnicity, sex, and lifestyle</li>
@@ -593,7 +559,7 @@
         </ul>
       </div>
       <div class="project-section">
-        <div class="project-section-title">What I learned</div>
+        <div class="label-sm project-section-title">What I learned</div>
         <ul class="learnings">
           <li><strong>Prompting is product design.</strong> The AI output is only as good as how you structure the input: edge cases, output format, tone. It's requirement writing.</li>
           <li><strong>LLM latency is a real UX constraint.</strong> A 10-second API call changes how you design the whole experience. I use Haiku for speed and Sonnet for depth, depending on what the user needs.</li>
@@ -605,7 +571,7 @@
   </div>
 
   <!-- MB Connect -->
-  <div class="project-card">
+  <div class="card project-card">
     <div class="project-header">
       <div class="project-icon icon-mb">⚜️</div>
       <div class="project-title-group">
@@ -632,12 +598,12 @@
       </div>
     </div>
     <div class="project-problem">
-      <div class="project-section-title">The problem</div>
+      <div class="label-sm project-section-title">The problem</div>
       <p>Scouts struggle to find which Merit Badge classes their troop is offering. Counselors have no visibility into what badges scouts actually want. MB Connect bridges that gap: scouts can discover and enroll in classes, counselors can see demand and manage their offerings.</p>
     </div>
     <div class="project-body">
       <div class="project-section">
-        <div class="project-section-title">Key Features</div>
+        <div class="label-sm project-section-title">Key Features</div>
         <ul class="features">
           <li>Public merit badge catalog with search, category filters, and difficulty indicators, visible without an account</li>
           <li>Role-based access for four user types (Scout, Counselor, Leader, Admin), each with their own permissions and views</li>
@@ -649,7 +615,7 @@
         </ul>
       </div>
       <div class="project-section">
-        <div class="project-section-title">What I learned</div>
+        <div class="label-sm project-section-title">What I learned</div>
         <ul class="learnings">
           <li><strong>Building for four user types at once is hard.</strong> Each persona has different goals, trust levels, and failure modes. Getting that right in the spec is the product work.</li>
           <li><strong>Row-level security is product policy in SQL.</strong> Every access decision (who can see what) is both a PM call and a database constraint. Get it wrong and it's a security bug, not just a UX issue.</li>
@@ -665,7 +631,6 @@
 <footer>
   <p>
     Built by <a href="https://www.linkedin.com/in/jigarchamp/" target="_blank" rel="noopener">Jigar Champaneria</a>
-    &nbsp;·&nbsp;
     &nbsp;·&nbsp;
     <a href="https://github.com/jigarchamp" target="_blank" rel="noopener">GitHub</a>
   </p>
