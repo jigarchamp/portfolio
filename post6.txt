@@ -1,0 +1,148 @@
+================================================================================
+POST 6 — THE TEMPTATION
+"The Thing That Surprised Me Wasn't What Changed"
+================================================================================
+
+INTENDED AUDIENCE
+Anyone who's followed the series, plus first-time readers who land on the
+closing post. The HP stories tie back to Posts 1 and 3. The tone is more
+reflective than tactical — this is the "what I actually learned" post, not
+another lesson. Readers who've been building with AI will recognize the
+cooling period story immediately.
+
+ANTICIPATED COMMENTS/QUESTIONS TO PREEMPT IN THE TEXT:
+- "So the lesson is just: slow down?" → no: the lesson is that the
+  fundamentals of good PM work didn't change, speed just made them
+  easier to skip
+- "Isn't this obvious in hindsight?" → yes — and that's exactly the point:
+  you know it before you start, and you stop acting on it anyway
+- "What do you do differently now?" → answer it: the first hour is for
+  the customer's question, not your expert answer
+
+NOTE: This is the series closer. The Q20 answer from the Q&A is the
+landing paragraph — use it nearly verbatim. Circle back to Post 1:
+from "I was BSing my way through AI questions" to "here's what I
+actually learned." The series ends where it began: with honesty.
+
+────────────────────────────────────────────────────────────────────────────────
+DRAFT
+────────────────────────────────────────────────────────────────────────────────
+
+Claude hit its usage limits. I had to wait for them to reset.
+
+So I did what any productive person does during downtime: I started writing
+notes. A few lines about what I wanted to fix in Healthy Pathways. Things
+that weren't quite right. Gaps I'd noticed but hadn't addressed.
+
+By the time the limit reset, I had paragraphs.
+
+Not a list of improvements. A list of things I hadn't thought through
+properly in the first place. I'd been building for days and the writing
+revealed something the building had hidden: I was fixing the product I'd
+made instead of asking whether I'd made the right product.
+
+Fixing things piece by piece might have made the app function better.
+It wouldn't have made it more valuable.
+
+[Healthy Pathways: https://healthy-pathways.vercel.app/]
+
+The forced pause did what discipline should have done from the start.
+
+That's the thing about building with AI tools. The speed is real and it's
+seductive. You can go from an idea to a working feature in a few hours, and
+that feeling — of watching something appear — makes it very easy to keep
+going without stopping to ask whether you're going in the right direction.
+The next prompt is always right there. The next feature is always one
+conversation away.
+
+The discipline that's actually hard isn't technical. It's knowing when to
+stop building and start thinking.
+
+I felt this most clearly in how I approached Healthy Pathways at the
+beginning. My starting point was expert knowledge: South Asians should
+monitor their A1C, LP(a), and Apo(b) markers. That's medically accurate.
+It's also completely backwards as a product premise.
+
+Those markers are answers for people who have already asked the right
+questions. My users hadn't gotten there yet. They weren't starting from
+"I need to know my LP(a)." They were starting from "I'm middle aged, not very active, and
+I don't know what to ask my doctor." I was handing them answers to questions
+they hadn't thought to ask.
+
+It took many iterations and more than a few forced cooling-down sessions
+before I stopped trying to teach users about health and started trying to
+understand what they were actually worried about. The app I should have
+built was always about their questions, not my answers.
+
+If I had spent the first hour on that — walking through what customers
+actually experience when they think about their health — I would have saved
+tons of rework.
+
+I started this whole exercise because I was BSing my way through AI
+questions in interviews and I knew it. What I didn't expect was what I'd
+actually learn.
+
+The thing that surprised me wasn't what stayed important. It was how quickly
+I stopped acting like it was important.
+
+PRDs, hypothesis-driven experimentation, building for customer value over
+feature count: none of that changes. AI reduces friction at every stage of
+delivery, but the fundamentals of good product thinking are just as
+load-bearing as they've always been.
+
+What I didn't expect was how seductive the speed would be. When you can
+build fast, slowing down to ask "should we build this at all?" feels like
+a drag. It isn't. It's the job.
+
+The PMs who lose the thread in an AI-enabled world won't fail because they
+don't know the principles. They'll fail because speed made it easy to stop
+applying them.
+
+You end up shipping more. You don't end up shipping better.
+
+What are you going to think through before you start your next AI-assisted
+build — and how long are you going to give yourself to think it through?
+
+[Full portfolio: https://jigarchamp.github.io/portfolio/]
+
+────────────────────────────────────────────────────────────────────────────────
+NOTES FOR REVISION
+────────────────────────────────────────────────────────────────────────────────
+
+HOOK TEST: "Claude hit its usage limits. I had to wait for them to reset.
+So I did what any productive person does during downtime: I started writing
+notes." Works before "see more." Immediately relatable to anyone who's used
+AI tools. The twist — paragraphs of unresolved thinking — lands fast.
+
+THE COOLING PERIOD STORY: The insight is in the contrast: "Not a list of
+improvements. A list of things I hadn't thought through properly in the
+first place." Keep that sentence exactly as is.
+
+THE A1C STORY: "Those are answers for people who have already asked the
+right questions" is the line. The detail (A1C, LP(a), Apo(b)) shows real
+domain knowledge without being inaccessible — the principle is clear even
+if readers don't know the markers.
+
+THE Q20 LANDING: Used nearly verbatim from the Q&A answer. "The thing that
+surprised me wasn't what stayed important. It was how quickly I stopped
+acting like it was." This is the thesis of the entire series, landed at
+the end of the final post.
+
+CALLBACK TO POST 1: "I started this whole exercise because I was BSing my
+way through AI questions in interviews" closes the loop. Readers who followed
+from Post 1 will feel the full arc. First-time readers get enough context.
+
+ENDING QUESTION: Forward-looking rather than reflective. "What are you going
+to think through before you start your next AI-assisted build, and how long
+are you going to give yourself to think it through?" Invites action, not
+just agreement.
+
+SERIES CLOSER: No recruiter line needed here — that was Post 1. This post
+ends on the idea, not the ask. The portfolio link at the bottom is sufficient.
+
+LENGTH: ~480 words. Earns it as the closer. If trimming needed, compress
+the "speed is seductive" paragraph — the key beats are: forced pause,
+list of unresolved thinking, expert answers vs. customer questions,
+Q20 landing lines.
+
+================================================================================
