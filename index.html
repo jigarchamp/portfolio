@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jigar Champaneria — AI Product Portfolio</title>
-  <meta name="description" content="Personal projects exploring AI-assisted product development — built to understand both sides of the product and engineering table." />
+  <title>Jigar Champaneria · AI Product Portfolio</title>
+  <meta name="description" content="Personal projects exploring AI-assisted product development, built to understand both sides of the product and engineering table." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -173,40 +173,50 @@
       max-width: 700px;
     }
     .why-card p + p { margin-top: 16px; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 28px;
-    }
     @media (max-width: 600px) {
       .why-card { padding: 24px; }
-      .why-grid { grid-template-columns: 1fr; }
     }
-    .why-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px 20px;
-    }
-    .why-item-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .why-item-icon {
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .why-item strong {
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .why-item span {
+    .why-questions-label {
       font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin: 32px 0 16px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .why-list li {
+      padding-left: 20px;
+      position: relative;
+    }
+    .why-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .why-list li {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .why-list li strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .why-list li span {
       color: var(--muted);
-      line-height: 1.5;
     }
 
     /* ── PROJECT CARD ──────────────────────────────── */
@@ -464,93 +474,70 @@
     <span class="dot"></span>
     AI Product Portfolio
   </div>
-  <h1>Building to <em>understand</em><br>how AI products are made.</h1>
+  <h1>I bombed the AI PM questions. <br><em>So I built something.</em><br></h1>
   <p class="hero-desc">
-    I'm a Technical Product Manager who learns by doing. I built two apps to feel firsthand what it takes to ship - the tradeoffs engineers face daily, and how AI is changing what's possible.
+    After 10+ years in product, in 2025, I kept getting asked how I was using AI in my work. I didn't have a good answer. So I built two apps to find out what it takes to ship, the tradeoffs product teams face daily, and how AI is changing what's possible.
   </p>
 </section>
 <!-- ── WHY ───────────────────────────────────────────── -->
 <section class="section">
-  <div class="section-label">Why I built these apps</div>
+  <div class="section-label">What I was trying to figure out</div>
   <div class="why-card">
     <p>
-      I kept asking myself: <strong>what does it actually feel like to build with AI tools when development cost is basically zero?</strong> Not just manage a team doing it - but write the specs, make the tradeoffs, and ship something real.
+      I kept asking myself: <strong>what does it actually feel like to build with AI tools when development cost is basically zero?</strong> Not just manage a team doing it, but write the specs, make the tradeoffs, and ship something real.
     </p>
     <p>
       So I built two apps using Claude Code. Not to become a software engineer, but to build the intuition and vocabulary to be a better PM.
     </p>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-item-header">
-          <div class="why-item-icon">🔧</div>
-          <strong>Hands-on AI tool experience</strong>
-        </div>
-        <span>Feel what AI-assisted development is like from the inside - where it speeds things up, where it needs guidance, and where PM judgment makes the difference.</span>
-      </div>
-      <div class="why-item">
-        <div class="why-item-header">
-          <div class="why-item-icon">🔄</div>
-          <strong>Builder vs. manager perspective</strong>
-        </div>
-        <span>How the PM role changes when you've personally had to choose between scope, complexity, and shipping speed.</span>
-      </div>
-      <div class="why-item">
-        <div class="why-item-header">
-          <div class="why-item-icon">📦</div>
-          <strong>Full product lifecycle ownership</strong>
-        </div>
-        <span>Own every phase - idea, spec, build, deploy - to see where early decisions ripple downstream.</span>
-      </div>
-      <div class="why-item">
-        <div class="why-item-header">
-          <div class="why-item-icon">🎯</div>
-          <strong>Better engineering conversations</strong>
-        </div>
-        <span>Talk to engineers as a peer: Database policies, API constraints, data models, auth flows - not just tickets.</span>
-      </div>
-    </div>
+    <div class="why-questions-label">Honest questions I had</div>
+    <ul class="why-list">
+      <li><strong>Where does AI actually need PM judgment, and where doesn't it?</strong> <span>I wanted to find the line. Not read about it, but hit it myself and see what happened.</span></li>
+      <li><strong>Do engineers still need a PM when AI can build anything?</strong> <span>I had a real answer to this after building. I didn't before.</span></li>
+      <li><strong>How much does an early decision actually cost you downstream?</strong> <span>When you own the whole product, every tradeoff you deferred eventually shows up on your doorstep.</span></li>
+      <li><strong>What do engineers think about that PMs never ask?</strong> <span>Building database policies and wiring up auth flows gave me a different set of questions to bring to engineering conversations.</span></li>
+    </ul>
   </div>
 </section>
 
 <!-- ── KEY LEARNINGS ───────────────────────────────────── -->
 <section class="section">
-  <div class="section-label">Key takeaways — building AI products vs. managing teams building them</div>
+  <div class="section-label">What I actually learned</div>
   <div class="learnings-grid">
 
     <div class="learning-card">
-      <div class="learning-card-num">01 — Acceleration ≠ Automation</div>
+      <div class="learning-card-num">01: Acceleration ≠ Automation</div>
       <h3>AI tools make you faster, not autonomous</h3>
-      <p>Claude Code moved fast, but every meaningful decision still needed my judgment. Vague requirements produce vague code — writing a clear spec for AI is the same skill as writing one for an engineer.</p>
+      <p>Claude Code moved fast, but every meaningful decision still needed my judgment. Vague requirements produce vague code: writing a clear spec for AI is the same skill as writing one for an engineer.</p>
     </div>
 
     <div class="learning-card">
-      <div class="learning-card-num">02 — The Bottleneck Shifts</div>
+      <div class="learning-card-num">02: The Bottleneck Shifts</div>
       <h3>PM judgment, not engineering velocity, is the constraint</h3>
-      <p>When AI handles implementation, the bottleneck shifts to product clarity: what to build, in what order, for whom. Good product thinking gets <em>more</em> valuable as AI tools mature — not less.</p>
+      <p>When AI handles implementation, the bottleneck shifts to product clarity: what to build, in what order, for whom. Good product thinking gets <em>more</em> valuable as AI tools mature, not less.</p>
     </div>
 
     <div class="learning-card">
-      <div class="learning-card-num">03 — Technical Fluency Changes Conversations</div>
+      <div class="learning-card-num">03: Technical Fluency Changes Conversations</div>
       <h3>Shared vocabulary with engineers changes what's possible</h3>
-      <p>Having built RLS policies, managed API costs, and wired up multi-step state myself — I now know which engineering tradeoffs are real and which are negotiable. That changes how I scope, estimate, and push back.</p>
+      <p>Having built RLS policies, managed API costs, and wired up multi-step state myself, I now know which engineering tradeoffs are real and which are negotiable. That changes how I scope, estimate, and push back.</p>
     </div>
 
     <div class="learning-card">
-      <div class="learning-card-num">04 — Prompt Engineering = Requirement Writing</div>
-      <h3>AI product quality is determined at the spec layer</h3>
-      <p>Writing the health analysis prompt — output format, tone, edge cases, fallbacks — felt exactly like writing a PRD. PMs who thrive in AI will be the ones who can translate user needs directly into model instructions.</p>
+      <div class="learning-card-num">04: Prompting is Requirement Writing</div>
+      <h3>Writing a prompt is the same work as writing a requirement</h3>
+      <p>Writing the health analysis prompt (output format, tone, edge cases, fallbacks) felt exactly like writing a PRD. PMs who thrive in AI will be the ones who can translate user needs directly into model instructions.</p>
     </div>
 
     <div class="learning-card">
-      <div class="learning-card-num">05 — Shipping Teaches What Planning Can't</div>
+      <div class="learning-card-num">05: Shipping Teaches What Planning Can't</div>
       <h3>Real usage surfaces gaps no backlog anticipates</h3>
-      <p>Every sprint, fixing one thing exposed the next gap. Cutting scope, resisting over-engineering, shipping anyway — you don't really learn that until you own the deadline.</p>
+      <p>Every sprint, fixing one thing exposed the next gap. Cutting scope, resisting over-engineering, shipping anyway: you don't really learn that until you own the deadline.</p>
     </div>
 
     <div class="learning-card">
-      <div class="learning-card-num">06 — AI Requires New UX Paradigms</div>
+      <div class="learning-card-num">06: AI Creates New UX Problems</div>
       <h3>Latency, uncertainty, and hallucination are product problems</h3>
-      <p>Healthy Pathways had latency, partial outputs, and model uncertainty — all displayed to health-conscious users. None of that is an engineering problem. It's a product design problem, and spinners don't solve it.</p>
+      <p>Healthy Pathways had latency, partial outputs, and model uncertainty, all displayed to health-conscious users. None of that is an engineering problem. It's a product design problem, and spinners don't solve it.</p>
     </div>
 
   </div>
@@ -566,7 +553,7 @@
       <div class="project-icon icon-hp">🌿</div>
       <div class="project-title-group">
         <div class="project-title">Healthy Pathways</div>
-        <div class="project-tagline">AI-powered personal health assessment tool. Enter your lab results and health profile — Claude AI generates a structured, actionable health review with traffic-light status indicators and doctor questions.</div>
+        <div class="project-tagline">Most people go to the doctor's office not knowing what to ask. Healthy Pathways surfaces what matters so you walk in with better questions.</div>
         <div class="stack-pills">
           <span class="stack-pill">Next.js</span>
           <span class="stack-pill">TypeScript</span>
@@ -589,26 +576,26 @@
       </div>
     </div>
     <div class="project-problem">
-      <div class="project-section-title">What problem are we trying to solve?</div>
-      <p>Most people leave the doctor's office unclear about which health areas to focus on or which tests to ask for. Healthy Pathways uses your demographics, lifestyle, and lab results to surface what matters most — not to replace your doctor, but to help you walk in with better questions.</p>
+      <div class="project-section-title">The problem</div>
+      <p>People are unclear about which health areas to focus on or which tests to ask their doctor for. Healthy Pathways uses your demographics, lifestyle, and lab results to surface what matters most, not to replace your doctor, but to help you walk in to your visit with better questions.</p>
     </div>
     <div class="project-body">
       <div class="project-section">
         <div class="project-section-title">Key Features</div>
         <ul class="features">
-          <li>3-step assessment wizard with auto-save and resume — users never lose progress</li>
+          <li>3-step assessment wizard with auto-save and resume; users never lose progress</li>
           <li>AI-driven concern recommendations based on age, ethnicity, sex, and lifestyle</li>
-          <li>Progressive biomarker entry — grouped by concern, collapsed by default so users aren't overwhelmed</li>
+          <li>Progressive biomarker entry, grouped by concern and collapsed by default so users aren't overwhelmed</li>
           <li>Traffic-light health review (Act Now / Monitor / Explore) with findings, actions, and doctor questions</li>
-          <li>Guest mode — rules-based analysis, no account needed, nothing stored server-side</li>
+          <li>Guest mode: rules-based analysis, no account needed, nothing stored server-side</li>
           <li>Quality meter that tells users when they've entered enough for a meaningful analysis</li>
-          <li>Assessment history with PDF export — designed to be taken to a doctor's appointment</li>
+          <li>Assessment history with PDF export, designed to be taken to a doctor's appointment</li>
         </ul>
       </div>
       <div class="project-section">
-        <div class="project-section-title">Personal Learnings</div>
+        <div class="project-section-title">What I learned</div>
         <ul class="learnings">
-          <li><strong>Prompting is product design.</strong> The AI output is only as good as how you structure the input — edge cases, output format, tone. It's requirement writing.</li>
+          <li><strong>Prompting is product design.</strong> The AI output is only as good as how you structure the input: edge cases, output format, tone. It's requirement writing.</li>
           <li><strong>LLM latency is a real UX constraint.</strong> A 10-second API call changes how you design the whole experience. I use Haiku for speed and Sonnet for depth, depending on what the user needs.</li>
           <li><strong>Invent & simplify.</strong> It's easy to keep adding. The harder call is cutting features that complicate more than they help.</li>
           <li><strong>The backlog never empties.</strong> Every fix revealed the next gap. Prioritizing under constraint is the same work whether AI or engineers are writing the code.</li>
@@ -623,7 +610,7 @@
       <div class="project-icon icon-mb">⚜️</div>
       <div class="project-title-group">
         <div class="project-title">MB Connect</div>
-        <div class="project-tagline">Merit badge management platform for BSA Scout troops. Scouts discover and track badges, counselors create and manage classes, troop leaders maintain roster visibility — all in one role-aware app.</div>
+        <div class="project-tagline">Scouts can't find which merit badge classes their troop is offering. Counselors don't know what scouts actually want. MB Connect connects them.</div>
         <div class="stack-pills">
           <span class="stack-pill">Next.js</span>
           <span class="stack-pill">TypeScript</span>
@@ -645,28 +632,28 @@
       </div>
     </div>
     <div class="project-problem">
-      <div class="project-section-title">What problem are we trying to solve?</div>
-      <p>Scouts struggle to find which Merit Badge classes their troop is offering. Counselors have no visibility into what badges scouts actually want. MB Connect bridges that gap — scouts can discover and enroll in classes, counselors can see demand and manage their offerings.</p>
+      <div class="project-section-title">The problem</div>
+      <p>Scouts struggle to find which Merit Badge classes their troop is offering. Counselors have no visibility into what badges scouts actually want. MB Connect bridges that gap: scouts can discover and enroll in classes, counselors can see demand and manage their offerings.</p>
     </div>
     <div class="project-body">
       <div class="project-section">
         <div class="project-section-title">Key Features</div>
         <ul class="features">
-          <li>Public merit badge catalog with search, category filters, and difficulty indicators — visible without an account</li>
-          <li>Role-based access for four user types — Scout, Counselor, Leader, Admin — each with their own permissions and views</li>
-          <li>Counselor qualification profiles — self-declared teaching credentials scoped to specific merit badges</li>
-          <li>Class creation and enrollment flow — counselors publish sessions, scouts discover and register</li>
-          <li>Merit badge detail pages listing available counselors — closing the loop from discovery to enrollment</li>
+          <li>Public merit badge catalog with search, category filters, and difficulty indicators, visible without an account</li>
+          <li>Role-based access for four user types (Scout, Counselor, Leader, Admin), each with their own permissions and views</li>
+          <li>Counselor qualification profiles: self-declared teaching credentials scoped to specific merit badges</li>
+          <li>Class creation and enrollment flow: counselors publish sessions, scouts discover and register</li>
+          <li>Merit badge detail pages listing available counselors, closing the loop from discovery to enrollment</li>
           <li>Troop roster management for admins with role and join-date visibility</li>
           <li>Full guest → account onboarding flow with invite-based troop joining</li>
         </ul>
       </div>
       <div class="project-section">
-        <div class="project-section-title">Personal Learnings</div>
+        <div class="project-section-title">What I learned</div>
         <ul class="learnings">
           <li><strong>Building for four user types at once is hard.</strong> Each persona has different goals, trust levels, and failure modes. Getting that right in the spec is the product work.</li>
-          <li><strong>Row-level security is product policy in SQL.</strong> Every access decision — who can see what — is both a PM call and a database constraint. Get it wrong and it's a security bug, not just a UX issue.</li>
-          <li><strong>Shipping revealed gaps specs couldn't predict.</strong> The onboarding "cold drop" — finishing setup with no clear next step — was invisible until the full flow existed.</li>
+          <li><strong>Row-level security is product policy in SQL.</strong> Every access decision (who can see what) is both a PM call and a database constraint. Get it wrong and it's a security bug, not just a UX issue.</li>
+          <li><strong>Shipping revealed gaps specs couldn't predict.</strong> The onboarding "cold drop" (finishing setup with no clear next step) was invisible until the full flow existed.</li>
           <li><strong>Real data is messier than demo data.</strong> Seeding 135 actual BSA merit badges surfaced data quality issues I never would have found with a test dataset.</li>
         </ul>
       </div>
