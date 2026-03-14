@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building to Understand — Jigar Champaneria</title>
+  <meta name="description" content="A six-post series on what I actually learned about AI by building two apps from scratch as a Senior TPM." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b7280;
+      text-decoration: none;
+      margin-bottom: 48px;
+    }
+    .back:hover { color: #4f46e5; }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #4f46e5;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .post-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .post-item a {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid #f3f4f6;
+      text-decoration: none;
+      color: inherit;
+      transition: background .1s;
+    }
+    .post-item:last-child a { border-bottom: none; }
+    .post-item a:hover .post-title { color: #4f46e5; }
+
+    .post-num {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #9ca3af;
+      min-width: 44px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .post-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.35;
+      transition: color .15s;
+    }
+
+    .arrow {
+      margin-left: auto;
+      color: #d1d5db;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: color .15s;
+    }
+    .post-item a:hover .arrow { color: #4f46e5; }
+
+    .portfolio-cta {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-cta a.btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: #4f46e5;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .portfolio-cta a.btn:hover { opacity: .85; }
+
+    .portfolio-cta p {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    footer a { color: #4f46e5; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <a class="back" href="https://jigarchamp.github.io/portfolio/">
+    ← Back to portfolio
+  </a>
+
+  <div class="eyebrow">6-Post Series &nbsp;·&nbsp; AI Product Management</div>
+
+  <h1>Building to Understand</h1>
+  <p class="subtitle">What I learned about AI by building with it</p>
+
+  <div class="meta">Jigar Champaneria &nbsp;·&nbsp; March 2026</div>
+
+  <ol class="post-list">
+    <li class="post-item">
+      <a href="post1.html">
+        <span class="post-num">Post 1</span>
+        <span class="post-title">I Bombed the AI Questions. So I Built Something.</span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post2.html">
+        <span class="post-num">Post 2</span>
+        <span class="post-title">Engineers Absorbed Your Vagueness. AI Won't.</span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post3.html">
+        <span class="post-num">Post 3</span>
+        <span class="post-title">Simplifying for Users Means Complicating the Code</span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post4.html">
+        <span class="post-num">Post 4</span>
+        <span class="post-title">When Leaders Push for Speed, PMs Need to Ask: Speed Toward What?</span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post5.html">
+        <span class="post-num">Post 5</span>
+        <span class="post-title">Cheap Building Doesn't Change What Makes an Experiment Real</span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li class="post-item">
+      <a href="post6.html">
+        <span class="post-num">Post 6</span>
+        <span class="post-title">The Thing That Surprised Me Wasn't What Changed</span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+  </ol>
+
+  <div class="portfolio-cta">
+    <a class="btn" href="https://jigarchamp.github.io/portfolio/" target="_blank" rel="noopener">See what I built →</a>
+    <p>Two apps built with a $20/month Claude subscription.</p>
+  </div>
+
+  <footer>
+    <p>Written by <a href="https://www.linkedin.com/in/jigarchamp/">Jigar Champaneria</a> &nbsp;·&nbsp; <a href="https://jigarchamp.github.io/portfolio/">Portfolio</a> &nbsp;·&nbsp; <a href="https://github.com/jigarchamp">GitHub</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>

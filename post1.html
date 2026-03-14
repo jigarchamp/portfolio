@@ -88,28 +88,38 @@
       margin: 40px 0 24px;
     }
 
-    .cta {
-      margin-top: 48px;
+    .series-nav {
+      display: flex;
+      gap: 12px;
+      margin: 48px 0 0;
       padding-top: 32px;
       border-top: 1px solid #e5e7eb;
+      flex-wrap: wrap;
     }
-
-    .cta a {
+    .series-nav a {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: #fff;
-      background: #4f46e5;
-      padding: 10px 20px;
+      padding: 8px 16px;
       border-radius: 8px;
       text-decoration: none;
-      margin-bottom: 20px;
+      transition: opacity .15s;
     }
-    .cta a:hover { opacity: .85; }
+    .series-nav a:hover { opacity: .8; }
+    .series-nav .next {
+      background: #4f46e5;
+      color: #fff;
+    }
+    .series-nav .portfolio {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
 
     .cta-note {
+      margin-top: 24px;
       font-size: 14px;
       color: #6b7280;
       line-height: 1.6;
@@ -130,8 +140,8 @@
 
 <div class="container">
 
-  <a class="back" href="https://jigarchamp.github.io/portfolio/">
-    ← Back to portfolio
+  <a class="back" href="series.html">
+    ← Back to series
   </a>
 
   <div class="eyebrow">Post 1 of 6 — AI Product Management</div>
@@ -172,16 +182,16 @@
 
   </div>
 
-  <div class="cta">
-    <a href="https://jigarchamp.github.io/portfolio/" target="_blank" rel="noopener">
-      See what I built →
-    </a>
-    <p class="cta-note">
-      I'm currently between roles and actively looking for my next PM opportunity.<br>
-      If you're hiring a Senior TPM who's been in the trenches with AI tools,
-      <a href="https://www.linkedin.com/in/jigarchamp/">I'd love to connect.</a>
-    </p>
+  <div class="series-nav">
+    <a class="next" href="post2.html">Post 2: Engineers Absorbed Your Vagueness →</a>
+    <a class="portfolio" href="https://jigarchamp.github.io/portfolio/" target="_blank" rel="noopener">See what I built →</a>
   </div>
+
+  <p class="cta-note">
+    I'm currently between roles and actively looking for my next PM opportunity.<br>
+    If you're hiring a Senior TPM who's been in the trenches with AI tools,
+    <a href="https://www.linkedin.com/in/jigarchamp/">I'd love to connect.</a>
+  </p>
 
   <footer>
     <p>Written by <a href="https://www.linkedin.com/in/jigarchamp/">Jigar Champaneria</a> &nbsp;·&nbsp; <a href="https://jigarchamp.github.io/portfolio/">Portfolio</a> &nbsp;·&nbsp; <a href="https://github.com/jigarchamp">GitHub</a></p>
