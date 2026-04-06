@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philmont 2026 — 7-Day Itinerary Comparison</title>
+  <style>
+    :root {
+      --green-dark:  #1e3a2f;
+      --green-mid:   #2d5a3d;
+      --green-light: #4a7c5a;
+      --gold:        #c8922a;
+      --gold-light:  #f0c060;
+      --cream:       #f9f4ec;
+      --tan:         #e8dcc8;
+      --text:        #1a1a1a;
+      --muted:       #555;
+      --red:         #b03030;
+      --s-bg:        #e8f0e8;
+      --ss-bg:       #f0e8d8;
+      --rec-border:  #c8922a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      color: white;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      border-bottom: 6px solid var(--gold);
+    }
+    header .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+    header p.subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-size: 1.45rem;
+      color: var(--green-dark);
+      border-left: 5px solid var(--gold);
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: var(--green-mid);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── LEGEND ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .badge-C  { background: #dff0d8; color: #2d6a2d; border: 1px solid #a8d8a8; }
+    .badge-R  { background: #dce8f8; color: #1a4a80; border: 1px solid #a8c4e8; }
+    .badge-S  { background: #fff3cc; color: #7a5000; border: 1px solid #e0c060; }
+    .badge-SS { background: #ffe0cc; color: #8b2500; border: 1px solid #e8a070; }
+    .badge-rec { background: var(--gold-light); color: var(--green-dark); border: 1px solid var(--gold); }
+
+    /* ── TABLES ── */
+    .table-wrapper { overflow-x: auto; margin-bottom: 1rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--green-dark);
+      color: white;
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(0,0,0,0.025); }
+
+    /* difficulty chips in overview table */
+    .chip {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .chip-C  { background: #dff0d8; color: #2d6a2d; }
+    .chip-R  { background: #dce8f8; color: #1a4a80; }
+    .chip-S  { background: #fff3cc; color: #7a5000; }
+    .chip-SS { background: #ffe0cc; color: #8b2500; }
+
+    /* highlighted rows */
+    tr.row-S  td { background: var(--s-bg) !important; }
+    tr.row-SS td { background: var(--ss-bg) !important; }
+    tr.row-rec td { background: #fef8e0 !important; }
+
+    /* ── ITINERARY CARDS ── */
+    .itin-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .itin-card.recommended {
+      border: 2px solid var(--rec-border);
+      box-shadow: 0 3px 12px rgba(200,146,42,0.2);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid #eee;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .card-header.S  { background: var(--s-bg); }
+    .card-header.SS { background: var(--ss-bg); }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .card-title h3 { margin: 0; font-size: 1.2rem; color: var(--green-dark); }
+
+    .rec-badge {
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+    .card-meta span { color: var(--muted); }
+    .card-meta strong { color: var(--text); }
+
+    .card-body { padding: 1.25rem; }
+
+    .card-description {
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+      border-left: 3px solid var(--gold);
+      padding-left: 0.75rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    @media (max-width: 640px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    .pros-cons h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .pros-cons.pros h4 { color: #2d6a2d; }
+    .pros-cons.cons h4 { color: var(--red); }
+
+    .pros-cons ul {
+      list-style: none;
+      font-size: 0.88rem;
+    }
+    .pros-cons ul li {
+      padding: 0.25rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .pros-cons.pros ul li::before { content: '✓'; position: absolute; left: 0; color: #2d6a2d; font-weight: 700; }
+    .pros-cons.cons ul li::before { content: '✗'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+
+    .day-table th { font-size: 0.78rem; }
+    .day-table td { font-size: 0.83rem; }
+    .day-table tr.staffed-camp td { font-weight: 600; }
+
+    .highlights-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.75rem 0;
+    }
+    .highlight-tag {
+      background: var(--tan);
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    /* ── RECOMMENDATIONS BOX ── */
+    .rec-box {
+      background: white;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .rec-box h3 { color: var(--green-dark); margin-bottom: 0.75rem; }
+    .rec-number {
+      display: inline-block;
+      background: var(--green-dark);
+      color: white;
+      font-weight: 700;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1.6rem;
+      font-size: 0.85rem;
+      margin-right: 0.4rem;
+      flex-shrink: 0;
+    }
+    .rec-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.92rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 2rem;
+      border-top: 1px solid #ddd;
+    }
+
+    /* ── UTILITIES ── */
+    .note {
+      background: #f0f4ff;
+      border-left: 4px solid #6080c0;
+      padding: 0.75rem 1rem;
+      font-size: 0.87rem;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 1.25rem;
+      color: #333;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8rem; }
+      .card-meta { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">BSA High Adventure · Summer 2026</div>
+  <h1>Philmont Scout Ranch</h1>
+  <p class="subtitle">7-Day Itinerary Comparison &amp; Guide — All 12 Options</p>
+</header>
+
+<div class="container">
+
+  <!-- ── OVERVIEW ── -->
+  <section>
+    <h2>At-a-Glance: All 12 Seven-Day Itineraries</h2>
+    <p class="section-intro">
+      All 7-day itineraries run from Camping Headquarters. Difficulty reflects the balance between hiking and program time.
+      Strenuous (S) and Super Strenuous (SS) options are highlighted below.
+    </p>
+
+    <div class="legend">
+      <span class="badge-C chip-C">C — Challenging: max program, shorter hikes</span>
+      <span class="badge-R chip-R">R — Rugged: good mix of hiking &amp; program</span>
+      <span class="badge-S chip-S">S — Strenuous: significant hiking, some program</span>
+      <span class="badge-SS chip-SS">SS — Super Strenuous: max hiking, min program</span>
+      <span class="badge-rec">⭐ Recommended</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Difficulty</th>
+            <th>Miles</th>
+            <th>Staffed</th>
+            <th>Trail</th>
+            <th>Dry</th>
+            <th>Notable Peaks / Landmarks</th>
+            <th>Key Programs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7-1</td>
+            <td><span class="chip chip-C">C</span></td>
+            <td>26</td><td>3</td><td>2</td><td>0</td>
+            <td>—</td>
+            <td>Maximum program time, gentle terrain</td>
+          </tr>
+          <tr>
+            <td>7-2</td>
+            <td><span class="chip chip-C">C</span></td>
+            <td>31</td><td>3</td><td>2</td><td>1</td>
+            <td>—</td>
+            <td>COPE, Rock Climbing, Blacksmithing</td>
+          </tr>
+          <tr>
+            <td>7-3</td>
+            <td><span class="chip chip-C">C</span></td>
+            <td>36</td><td>3</td><td>2</td><td>1</td>
+            <td>—</td>
+            <td>COPE, Initiative Games</td>
+          </tr>
+          <tr>
+            <td>7-4</td>
+            <td><span class="chip chip-R">R</span></td>
+            <td>34</td><td>3</td><td>2</td><td>1</td>
+            <td>Deer Lake Mesa</td>
+            <td>Balanced mix of hiking &amp; program</td>
+          </tr>
+          <tr>
+            <td>7-5</td>
+            <td><span class="chip chip-R">R</span></td>
+            <td>33</td><td>3</td><td>2</td><td>0</td>
+            <td>Stone Wall Pass, Shaefers Pass</td>
+            <td>Rock Climbing ×2, Shotgun, Western Lore</td>
+          </tr>
+          <tr>
+            <td>7-6</td>
+            <td><span class="chip chip-R">R</span></td>
+            <td>30</td><td>2</td><td>3</td><td>2</td>
+            <td>Deer Lake Mesa, Window Rock</td>
+            <td>Shotgun, Climbing, Demonstration Forest</td>
+          </tr>
+          <tr>
+            <td>7-7</td>
+            <td><span class="chip chip-R">R</span></td>
+            <td>32</td><td>2</td><td>3</td><td>2</td>
+            <td>—</td>
+            <td>COPE (full program), Rock Climbing</td>
+          </tr>
+          <tr class="row-S row-rec">
+            <td><strong>7-8 ⭐</strong></td>
+            <td><span class="chip chip-S">S</span></td>
+            <td><strong>36</strong></td><td>3</td><td>2</td><td>1</td>
+            <td>Tooth of Time (9,003')</td>
+            <td>Rock Climbing, Mining History, Black Mountain Encampment, Demonstration Forest</td>
+          </tr>
+          <tr class="row-S row-rec">
+            <td><strong>7-9 ⭐</strong></td>
+            <td><span class="chip chip-S">S</span></td>
+            <td><strong>43</strong></td><td>3</td><td>2</td><td>1</td>
+            <td>Shaefers Peak, Tooth of Time, Trail Peak (opt)</td>
+            <td>NM Homestead, Continental Tie &amp; Lumber, Western Lore, Beaubien Chuckwagon</td>
+          </tr>
+          <tr class="row-SS">
+            <td>7-10</td>
+            <td><span class="chip chip-SS">SS</span></td>
+            <td>44</td><td>3</td><td>2</td><td>1</td>
+            <td>Lookout Peak (9,927'), Shaefers Peak, Tooth of Time</td>
+            <td>Continental Tie &amp; Lumber, Western Lore, Rock Climbing, Beaubien</td>
+          </tr>
+          <tr class="row-SS">
+            <td>7-11</td>
+            <td><span class="chip chip-SS">SS</span></td>
+            <td>47</td><td>2</td><td>3</td><td>2</td>
+            <td>Mt. Phillips (11,736'), Comanche Peak (11,303')</td>
+            <td>Rock Climbing, Pioneer Homestead, Western Lore, High Mountain Ranching</td>
+          </tr>
+          <tr class="row-SS row-rec">
+            <td><strong>7-12 ⭐</strong></td>
+            <td><span class="chip chip-SS">SS</span></td>
+            <td><strong>44</strong></td><td>3</td><td>2</td><td>1</td>
+            <td>Tooth of Time, Cimarroncito Peak (10,475')</td>
+            <td>Rifle Shooting, Mining History, Rock Climbing, Western Lore, Sawmill</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <strong>Note:</strong> Shaded rows indicate S/Strenuous and SS/Super Strenuous itineraries. ⭐ marks are recommended options that best balance hiking and program time within those difficulty levels.
+    </div>
+  </section>
+
+  <!-- ── DETAILED CARDS: S & SS ── -->
+  <section>
+    <h2>Detailed Breakdown — Strenuous &amp; Super Strenuous Itineraries</h2>
+    <p class="section-intro">
+      Full day-by-day itinerary, elevation data, pros &amp; cons for each S and SS option.
+      <strong>Staffed camp names are in all caps</strong> — these are where dedicated program time occurs.
+    </p>
+
+    <!-- 7-8 -->
+    <div class="itin-card recommended">
+      <div class="card-header S">
+        <div class="card-title">
+          <h3>Itinerary 7-8</h3>
+          <span class="chip chip-S">Strenuous</span>
+          <span class="rec-badge">⭐ Top Pick</span>
+        </div>
+        <div class="card-meta">
+          <span><strong>36 miles</strong></span>
+          <span>3 Staffed · 2 Trail · 1 Dry Camp</span>
+          <span>Elev: 7,500′ – 9,350′</span>
+          <span>South Sectional Map</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">
+          "Significant hiking time with some program time" — follows beautiful wooded waterways surrounding Tooth of Time Ridge, from south country over Comanche Pass into central country.
+        </p>
+
+        <div class="highlights-row">
+          <span class="highlight-tag">Tooth of Time</span>
+          <span class="highlight-tag">Rock Climbing</span>
+          <span class="highlight-tag">Mining History</span>
+          <span class="highlight-tag">Black Mountain Encampment</span>
+          <span class="highlight-tag">Demonstration Forest</span>
+          <span class="highlight-tag">Campfire Show</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="day-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Camp</th>
+                <th>Miles</th>
+                <th>Gain</th>
+                <th>Loss</th>
+                <th>Program / Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Camping HQ</td><td>—</td><td>—</td><td>—</td>
+                <td>Opening Campfire; arrive and settle in</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Lovers Leap (trail)</td><td>2.6</td><td>1,370′</td><td>980′</td>
+                <td>Ranger Training; Lovers Leap Overlook; Trail Camp · <em>Food pickup: HQ</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>3</td><td>MINERS PARK 🚿</td><td>2.2</td><td>760′</td><td>240′</td>
+                <td>Rock Climbing Program (wall, bouldering, crate stacking) · <em>Food pickup: Miners Park</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>4</td><td>BLACK MOUNTAIN</td><td>5.2</td><td>3,540′</td><td>2,450′</td>
+                <td>Conservation project @ N. Fork Urraca; Black Mountain Encampment Program; Black Mountain summit (optional)</td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>5</td><td>CYPHERS MINE</td><td>6.2</td><td>4,200′</td><td>3,960′</td>
+                <td>St. Louis &amp; Cimarron Mining Company Program; Campfire Show</td>
+              </tr>
+              <tr>
+                <td>6</td><td>Ponderosa Park (dry)</td><td>7.4</td><td>3,710′</td><td>5,030′</td>
+                <td>Passthrough Hunting Lodge; Demonstration Forest; Western Lore passthrough · <em>Carry extra water</em></td>
+              </tr>
+              <tr>
+                <td>7</td><td>Camping HQ</td><td>11.4</td><td>5,140′</td><td>6,450′</td>
+                <td><strong>Tooth of Time Summit</strong>; Hike into Base; Closing Campfire</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-grid">
+          <div class="pros-cons pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Gradual daily mileage build (2.6 → 2.2 → 5.2 → 6.2 → 7.4 → 11.4)</li>
+              <li>3 dedicated staffed camps — program time is guaranteed</li>
+              <li>Excellent variety: climbing, mining history, ecology, conservation</li>
+              <li>Iconic Tooth of Time finish</li>
+              <li>No fire recovery zone — fewer weather/sun hazards</li>
+              <li>Lowest max elevation of S/SS options (9,350′) — acclimatization easier</li>
+            </ul>
+          </div>
+          <div class="pros-cons cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Day 7 is demanding: 11.4 miles with 5,140′ gain — big push on tired legs</li>
+              <li>No summits above 10,000′</li>
+              <li>1 dry camp (Day 6 @ Ponderosa Park) — must carry extra water</li>
+              <li>No Beaubien/chuckwagon dinner experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-9 -->
+    <div class="itin-card recommended">
+      <div class="card-header S">
+        <div class="card-title">
+          <h3>Itinerary 7-9</h3>
+          <span class="chip chip-S">Strenuous</span>
+          <span class="rec-badge">⭐ Recommended</span>
+        </div>
+        <div class="card-meta">
+          <span><strong>43 miles</strong></span>
+          <span>3 Staffed · 2 Trail · 1 Dry Camp</span>
+          <span>Elev: 6,729′ – 9,343′</span>
+          <span>South Sectional Map</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">
+          "Significant hiking time with some program time" — tons of living history as you hike through south country and return over the Tooth of Time. Diverse landscapes from lush meadows to craggy peaks.
+        </p>
+
+        <div class="highlights-row">
+          <span class="highlight-tag">Tooth of Time</span>
+          <span class="highlight-tag">Shaefers Peak</span>
+          <span class="highlight-tag">Trail Peak (optional)</span>
+          <span class="highlight-tag">NM Homestead / Kit Carson</span>
+          <span class="highlight-tag">Continental Tie &amp; Lumber</span>
+          <span class="highlight-tag">Beaubien Chuckwagon Dinner</span>
+          <span class="highlight-tag">Black Mountain Encampment</span>
+          <span class="highlight-tag">Fishing (NM license req.)</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="day-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Camp</th>
+                <th>Miles</th>
+                <th>Gain</th>
+                <th>Loss</th>
+                <th>Program / Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Camping HQ</td><td>—</td><td>—</td><td>—</td>
+                <td>Opening Campfire</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Olympia (trail)</td><td>2.6</td><td>520′</td><td>300′</td>
+                <td>Ranger Training; Rayado Rancho passthrough; Kit Carson Museum · <em>Food pickup: HQ</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>3</td><td>CRATER LAKE</td><td>9.1</td><td>3,600′</td><td>1,930′</td>
+                <td>Abreu Family Homestead passthrough; Continental Tie &amp; Lumber Co. Program; Campfire Show · <em>Food pickup: Phillips Junction</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>4</td><td>BEAUBIEN 🚿</td><td>10.9*</td><td>5,580′</td><td>4,630′</td>
+                <td>Trail Peak (optional, strenuous); High Mountain Ranching Program; <strong>Chuckwagon Dinner; Campfire Show</strong></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>5</td><td>BLACK MOUNTAIN</td><td>3.5</td><td>1,920′</td><td>2,150′</td>
+                <td>Forest Fuels Reduction Project @ Beaubien; Black Mountain Encampment Program</td>
+              </tr>
+              <tr>
+                <td>6</td><td>Shaefers Pass (dry)</td><td>6.0</td><td>3,140′</td><td>3,460′</td>
+                <td>Black Mountain summit (optional, very strenuous) · <em>Carry water from North Fork Urraca or Black Mountain</em></td>
+              </tr>
+              <tr>
+                <td>7</td><td>Camping HQ</td><td>10.1</td><td>3,670′</td><td>5,740′</td>
+                <td>Shaefers Peak; <strong>Tooth of Time Summit</strong>; Hike Into Base; Closing Campfire</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">* Mileage and elevation figures assume no optional routes taken.</p>
+
+        <div class="card-grid">
+          <div class="pros-cons pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Richest living history program of any S/SS itinerary</li>
+              <li>Beaubien is a fan favorite — chuckwagon dinner + two campfire shows</li>
+              <li>Fishing opportunities available (NM license required)</li>
+              <li>Multiple optional summits (Trail Peak, Black Mountain) give crew flexibility</li>
+              <li>Both Shaefers Peak and Tooth of Time on Day 7</li>
+              <li>Lowest minimum elevation (6,729′) — great starting point</li>
+            </ul>
+          </div>
+          <div class="pros-cons cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Days 3 &amp; 4 are back-to-back long days: 9.1 + 10.9 miles mid-trip</li>
+              <li>Day 7 is still 10.1 miles — three demanding days</li>
+              <li>1 dry camp (Day 6 @ Shaefers Pass)</li>
+              <li>Crosses fire recovery zone (2022 Cooks Peak Fire) — sun/weather prep required</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-10 -->
+    <div class="itin-card">
+      <div class="card-header SS">
+        <div class="card-title">
+          <h3>Itinerary 7-10</h3>
+          <span class="chip chip-SS">Super Strenuous</span>
+        </div>
+        <div class="card-meta">
+          <span><strong>44 miles</strong></span>
+          <span>3 Staffed · 2 Trail · 1 Dry Camp</span>
+          <span>Elev: 7,513′ – 9,442′</span>
+          <span>South Sectional Map</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">
+          "Maximum hiking time with minimum program time" — tours much of Philmont's South Country with many viewpoints. Program opportunities exist but require early starts and efficient pace.
+        </p>
+
+        <div class="highlights-row">
+          <span class="highlight-tag">Lookout Peak (9,927′)</span>
+          <span class="highlight-tag">Tooth of Time</span>
+          <span class="highlight-tag">Shaefers Peak</span>
+          <span class="highlight-tag">Beaubien Chuckwagon</span>
+          <span class="highlight-tag">Continental Tie &amp; Lumber</span>
+          <span class="highlight-tag">Rock Climbing</span>
+          <span class="highlight-tag">Fishing available</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="day-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Camp</th>
+                <th>Miles</th>
+                <th>Gain</th>
+                <th>Loss</th>
+                <th>Program / Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Camping HQ</td><td>—</td><td>—</td><td>—</td>
+                <td>Opening Campfire</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Herradura (dry)</td><td>3.4</td><td>1,600′</td><td>1,200′</td>
+                <td>Ranger Training; Lovers Leap Overlook · <em>Dry camp; water at Lovers Leap</em> · <em>Food: HQ</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>3</td><td>CRATER LAKE</td><td>4.1</td><td>2,250′</td><td>1,370′</td>
+                <td>Stone Wall Pass; Continental Tie &amp; Lumber Co. Program; Campfire Show</td>
+              </tr>
+              <tr>
+                <td>4</td><td>Lookout Meadow (trail)</td><td>6.1</td><td>2,690′</td><td>1,640′</td>
+                <td>Lookout Peak (9,927′) · <em>Food: Phillips Junction</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>5</td><td>BEAUBIEN 🚿</td><td>7.3</td><td>3,740′</td><td>3,840′</td>
+                <td>Fish Camp passthrough; Commissary &amp; Trading Post; <strong>Chuckwagon Dinner &amp; Campfire Show</strong></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>6</td><td>MINERS PARK 🚿</td><td>8.6</td><td>4,320′</td><td>5,640′</td>
+                <td>Forest Fuels Reduction @ Beaubien; Black Mountain Encampment passthrough; Rock Climbing Program</td>
+              </tr>
+              <tr>
+                <td>7</td><td>Camping HQ</td><td><strong>13.6</strong></td><td>5,850′</td><td>7,170′</td>
+                <td>Shaefers Peak; <strong>Tooth of Time Summit</strong>; Hike Into Base; Closing Campfire</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-grid">
+          <div class="pros-cons pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Beaubien chuckwagon dinner + Tooth of Time finale combo</li>
+              <li>Rock climbing at Miners Park (Day 6)</li>
+              <li>Reaches Lookout Peak at 9,927′</li>
+              <li>3 staffed camps — more program than 7-11</li>
+              <li>Fishing opportunities available</li>
+            </ul>
+          </div>
+          <div class="pros-cons cons">
+            <h4>Cons</h4>
+            <ul>
+              <li><strong>Day 7 is 13.6 miles — hardest single day of any 7-day itinerary</strong></li>
+              <li>Program is "if pace allows" throughout — SS pace is demanding</li>
+              <li>Day 2 is a dry camp immediately (water management from Day 1)</li>
+              <li>Mileage heavily back-loaded; crew hits biggest day on most tired legs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-11 -->
+    <div class="itin-card">
+      <div class="card-header SS">
+        <div class="card-title">
+          <h3>Itinerary 7-11</h3>
+          <span class="chip chip-SS">Super Strenuous</span>
+        </div>
+        <div class="card-meta">
+          <span><strong>47 miles</strong></span>
+          <span>2 Staffed · 3 Trail · 2 Dry Camps</span>
+          <span>Elev: 7,860′ – 11,115′</span>
+          <span>South Sectional Map</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">
+          "Maximum hiking time with minimum program time" — traverses the west side of Philmont from Baldy valleys up to Mt. Phillips and descends through south country. Sees as much of the ranch as possible in 7 days.
+        </p>
+
+        <div class="highlights-row">
+          <span class="highlight-tag">Mt. Phillips (11,736′) ← highest in any 7-day</span>
+          <span class="highlight-tag">Comanche Peak (11,303′)</span>
+          <span class="highlight-tag">Rock Climbing</span>
+          <span class="highlight-tag">Pioneer Homestead</span>
+          <span class="highlight-tag">High Mountain Ranching</span>
+          <span class="highlight-tag">Fishing available</span>
+          <span class="highlight-tag">Burn recovery zone</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="day-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Camp</th>
+                <th>Miles</th>
+                <th>Gain</th>
+                <th>Loss</th>
+                <th>Program / Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Camping HQ</td><td>—</td><td>—</td><td>—</td>
+                <td>Opening Campfire</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Minnette Meadows (dry)</td><td>2.6</td><td>790′</td><td>270′</td>
+                <td>Ranger Training; Fire Ecology passthrough @ Cimarroncita · <em>Dry camp; Food: HQ</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>3</td><td>CIMARRONCITO 🚿</td><td>5.7</td><td>2,460′</td><td>2,160′</td>
+                <td>Ute Gulch Commissary passthrough; Rock Climbing Program · <em>Food: Ute Gulch</em></td>
+              </tr>
+              <tr>
+                <td>4</td><td>Comanche Peak (dry)</td><td>10.9*</td><td>8,380′</td><td>5,430′</td>
+                <td>Cyphers Mine passthrough; <strong>Comanche Peak (11,303′)</strong>; Big Red (optional) · <em>Water @ Cyphers Mine</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>5</td><td>PHILLIPS JUNCTION 🚿</td><td><strong>13.5</strong></td><td>4,430′</td><td>6,580′</td>
+                <td><strong>Mt. Phillips (11,736′)</strong>; Taos Trappers @ Clear Creek; Pioneer Homestead @ Crooked Creek; Commissary</td>
+              </tr>
+              <tr>
+                <td>6</td><td>Lower Bonito (trail)</td><td>6.3</td><td>2,890′</td><td>2,880′</td>
+                <td>Conservation @ Beaubien; High Mountain Ranching passthrough @ Beaubien; Trail Camp</td>
+              </tr>
+              <tr>
+                <td>7</td><td>Camping HQ</td><td>7.1</td><td>1,460′</td><td>3,520′</td>
+                <td>Abreu Family Homestead passthrough; Hike to Zastrow Trailhead; Closing Campfire</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">* Mileage and elevation figures assume no optional routes taken.</p>
+
+        <div class="card-grid">
+          <div class="pros-cons pros">
+            <h4>Pros</h4>
+            <ul>
+              <li><strong>Only 7-day itinerary reaching Mt. Phillips (11,736′)</strong></li>
+              <li>Also includes Comanche Peak (11,303′) — two major summits</li>
+              <li>Sees the widest variety of Philmont terrain</li>
+              <li>More manageable final days (Days 6–7 are shorter)</li>
+              <li>Fishing opportunities available</li>
+            </ul>
+          </div>
+          <div class="pros-cons cons">
+            <h4>Cons</h4>
+            <ul>
+              <li><strong>Day 5 is 13.5 miles — the longest day of any 7-day itinerary</strong></li>
+              <li>Day 4 (10.9 mi) + Day 5 (13.5 mi) = back-to-back brutal days</li>
+              <li>Only 2 staffed camps — minimum program time</li>
+              <li>2 dry camps to manage (Days 2 &amp; 4)</li>
+              <li>Crosses burn recovery zone — sun, weather, early start required</li>
+              <li>No Tooth of Time; no Beaubien chuckwagon</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-12 -->
+    <div class="itin-card recommended">
+      <div class="card-header SS">
+        <div class="card-title">
+          <h3>Itinerary 7-12</h3>
+          <span class="chip chip-SS">Super Strenuous</span>
+          <span class="rec-badge">⭐ Best SS Option</span>
+        </div>
+        <div class="card-meta">
+          <span><strong>44 miles</strong></span>
+          <span>3 Staffed · 2 Trail · 1 Dry Camp</span>
+          <span>Elev: 7,417′ – 9,350′</span>
+          <span>South Sectional Map</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">
+          "Maximum hiking time with minimum program time" — significant exposure and elevation gain/loss daily. Rewarded with exceptional views including the legendary Sawmill sunrise. Most program-diverse SS option.
+        </p>
+
+        <div class="highlights-row">
+          <span class="highlight-tag">Tooth of Time</span>
+          <span class="highlight-tag">Sawmill Sunrise</span>
+          <span class="highlight-tag">Cimarroncito Peak (10,475′, opt)</span>
+          <span class="highlight-tag">Rifle Shooting</span>
+          <span class="highlight-tag">Mining History</span>
+          <span class="highlight-tag">Rock Climbing</span>
+          <span class="highlight-tag">Western Lore</span>
+          <span class="highlight-tag">Burn recovery zone</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="day-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Camp</th>
+                <th>Miles</th>
+                <th>Gain</th>
+                <th>Loss</th>
+                <th>Program / Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td><td>Camping HQ</td><td>—</td><td>—</td><td>—</td>
+                <td>Opening Campfire Show</td>
+              </tr>
+              <tr>
+                <td>2</td><td>Vaca (trail)</td><td>3.6</td><td>1,390′</td><td>600′</td>
+                <td>Ranger Training; Trail Camp · <em>Food: HQ</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>3</td><td>CIMARRONCITO 🚿</td><td>6.9</td><td>3,360′</td><td>2,610′</td>
+                <td>Shotgun passthrough @ Harlan; Rock Climbing Program · <em>Food: Ute Gulch</em></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>4</td><td>SAWMILL</td><td>8.7</td><td>4,060′</td><td>2,990′</td>
+                <td>Rifle Shooting &amp; Cartridge Reloading Program; <strong>legendary sunrise views</strong></td>
+              </tr>
+              <tr class="staffed-camp">
+                <td>5</td><td>CYPHERS MINE</td><td>5.5*</td><td>3,250′</td><td>3,120′</td>
+                <td>Conservation @ Sawmill; Cimarroncito Peak (optional, 10,475′); St. Louis &amp; Cimarron Mining Co.; Campfire Show</td>
+              </tr>
+              <tr>
+                <td>6</td><td>Ponderosa Park (dry)</td><td>7.4</td><td>3,710′</td><td>5,030′</td>
+                <td>Hunting Lodge passthrough; Demonstration Forest; Western Lore passthrough @ Clarks Fork · <em>Carry extra water</em></td>
+              </tr>
+              <tr>
+                <td>7</td><td>Camping HQ</td><td>11.4</td><td>5,140′</td><td>6,450′</td>
+                <td>Shaefers Peak; <strong>Tooth of Time Summit</strong>; Hike Into Base; Closing Campfire</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">* Mileage and elevation figures assume no optional routes taken.</p>
+
+        <div class="card-grid">
+          <div class="pros-cons pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Most diverse program of any SS itinerary (rifle, shotgun, climbing, mining, western lore, forestry)</li>
+              <li>Sawmill sunrise is a bucket-list Philmont experience</li>
+              <li>3 staffed camps — more program access than 7-11</li>
+              <li>Optional Cimarroncito Peak at 10,475′</li>
+              <li>Same Tooth of Time finale as 7-8</li>
+              <li>More even mid-trip mileage (Days 3–6 range: 5.5–8.7 mi)</li>
+            </ul>
+          </div>
+          <div class="pros-cons cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>SS rating — program is officially "if pace allows," could feel rushed</li>
+              <li>Day 7 is still 11.4 miles after a hard week</li>
+              <li>Crosses burn recovery zone — sun/weather hazard prep required</li>
+              <li>1 dry camp (Day 6 @ Ponderosa Park)</li>
+              <li>No Beaubien/chuckwagon dinner experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL RECOMMENDATIONS ── -->
+  <section>
+    <h2>Final Recommendations</h2>
+
+    <div class="rec-box">
+      <h3>Top Pick: Itinerary 7-8 (Strenuous, 36 miles)</h3>
+      <div class="rec-item"><span class="rec-number">1</span>
+        <span><strong>Best overall balance</strong> for fit-but-not-seasoned crews. Daily mileage builds gradually so scouts gain trail legs before the big Day 7 push.</span>
+      </div>
+      <div class="rec-item"><span class="rec-number">2</span>
+        <span>Three dedicated staffed camps mean <strong>program time is guaranteed</strong> — not "if pace allows." Rock climbing, mining history, Black Mountain encampment all at full-program staffed stops.</span>
+      </div>
+      <div class="rec-item"><span class="rec-number">3</span>
+        <span>The Day 7 Tooth of Time finale (11.4 mi) is demanding but provides powerful motivation — scouts will dig deep knowing the summit and homecoming are the reward.</span>
+      </div>
+    </div>
+
+    <div class="rec-box">
+      <h3>Second Choice: Itinerary 7-9 (Strenuous, 43 miles)</h3>
+      <div class="rec-item"><span class="rec-number">1</span>
+        <span>Choose this if your crew is motivated by <strong>living history and the Beaubien experience</strong> (chuckwagon dinner + campfire show — a Philmont tradition crews rave about).</span>
+      </div>
+      <div class="rec-item"><span class="rec-number">2</span>
+        <span>The optional Trail Peak and Black Mountain summits let stronger crew members push further without holding back the group.</span>
+      </div>
+      <div class="rec-item"><span class="rec-number">3</span>
+        <span><strong>Caveat:</strong> Days 3 &amp; 4 are back-to-back at 9.1 + 10.9 miles — confirm the crew can handle consecutive long days before committing.</span>
+      </div>
+    </div>
+
+    <div class="rec-box">
+      <h3>Best SS Option: Itinerary 7-12 (Super Strenuous, 44 miles)</h3>
+      <div class="rec-item"><span class="rec-number">1</span>
+        <span>If the crew specifically wants SS difficulty and a harder challenge, 7-12 has the <strong>most diverse program</strong> of any SS itinerary — rifle shooting, rock climbing, mining history, western lore, and forestry ecology.</span>
+      </div>
+      <div class="rec-item"><span class="rec-number">2</span>
+        <span>The <strong>Sawmill sunrise</strong> is one of Philmont's most talked-about experiences. This is the itinerary to get there.</span>
+      </div>
+      <div class="rec-item"><span class="rec-number">3</span>
+        <span><strong>Caveat:</strong> SS means the guidebook defines program as "minimum." Crews must hike efficiently to reach staffed camp program windows — not ideal for moderate-fitness first-timers.</span>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Itinerary</th>
+            <th>Difficulty</th>
+            <th>Miles</th>
+            <th>Best For</th>
+            <th>Avoid If</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-rec">
+            <td><strong>⭐ 7-8</strong></td>
+            <td><span class="chip chip-S">S</span></td>
+            <td>36</td>
+            <td>Best balance of hiking + program; gradual mileage buildup; rock climbing focus</td>
+            <td>You want high peaks (above 10k) or max mileage challenge</td>
+          </tr>
+          <tr class="row-rec">
+            <td><strong>⭐ 7-9</strong></td>
+            <td><span class="chip chip-S">S</span></td>
+            <td>43</td>
+            <td>Rich living history; Beaubien chuckwagon; optional summits; fishing</td>
+            <td>Back-to-back 9+ mile days in the middle concern you</td>
+          </tr>
+          <tr>
+            <td>7-10</td>
+            <td><span class="chip chip-SS">SS</span></td>
+            <td>44</td>
+            <td>Beaubien + Tooth of Time combo; Lookout Peak</td>
+            <td>A 13.6-mile Day 7 is too much for your crew</td>
+          </tr>
+          <tr>
+            <td>7-11</td>
+            <td><span class="chip chip-SS">SS</span></td>
+            <td>47</td>
+            <td>Peak baggers only — Mt. Phillips + Comanche Peak</td>
+            <td>Anyone prioritizing program time or moderate fitness</td>
+          </tr>
+          <tr class="row-rec">
+            <td><strong>⭐ 7-12</strong></td>
+            <td><span class="chip chip-SS">SS</span></td>
+            <td>44</td>
+            <td>Best SS for program variety; rifle + climbing + Sawmill sunrise</td>
+            <td>Moderate crews — program is "if pace allows" on SS</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── DISCLAIMER ── -->
+  <section>
+    <div class="note">
+      <strong>Source:</strong> 2026 Philmont Adventure Itinerary Guidebook (Rev. 12/17/2025). All mileage, elevation, and program data sourced from the official guidebook.
+      Camps with an asterisk (*) note that mileage/elevation figures assume no optional routes.
+      <strong>No changes are possible for camps, food pickups, or bus transportation after itinerary selection.</strong>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>2026 Philmont Scout Ranch · 7-Day Itinerary Guide · BSA High Adventure</p>
+  <p style="margin-top:0.4rem;">Data sourced from the official 2026 Philmont Adventure Itinerary Guidebook</p>
+</footer>
+
+</body>
+</html>
